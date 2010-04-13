@@ -1,0 +1,21 @@
+---
+layout: default
+permalink: /about/
+title: About
+
+css:
+    - ../css/screen.css
+    - ../css/syntax.css
+
+text:
+    - I am Sergi Mansilla, a software developer from Barcelona living in Amsterdam since 2006. I currently work at TomTom International as a JavaScript developer where I helped develop products such as <a href="http://www.tomtom.com/services/service.php?id=16&Lid=4">TomTom Home</a> and other great UI-related projects.
+
+    - I spend a portion of my free time developing my own projects, mostly in JavaScript now, but also in other (mostly functional) languages like Scheme or Ocaml. I am in fact quite passionate about coding. You can see some of my projects <a href="http://github.com/sergi">here</a>.
+---
+<h2>About me</h2>
+<div class="comments"></div>
+<div class="main">
+{% for p in page.text %}
+    <p>{{ p }}</p>
+{% endfor %}
+</div>

@@ -1,16 +1,15 @@
 ---
 layout: default
+css:
+    - ../css/screen.css
+    - ../css/syntax.css
 ---
 {% assign post = page %}
 <h2><a href="{{ post.id }}" rel="bookmark">{{ post.title }}</a></h2>
-<p class="comments"><a href="http://www.sergimansilla.com/blog/?p=136#comments">{{ post.date | date:'%A, %B %d, %Y' | replace:' 0',' ' }}</a></p>
+<p class="comments"><a href="#comments">{{ post.date | date:'%A, %B %d, %Y' | replace:' 0',' ' }}</a></p>
 <div class="main">{{ content }}</div>
-<div class="meta group">
-    <div class="signature">
-        <p>Posted by {{ site.author.name }} on {{ post.date | date:'%A, %B %d, %Y' | replace:' 0',' ' }}</p>
-    </div>
-</div>
-<div id="disqus_thread"></div>
+<div class="comments"></div>
+<div id="disqus_thread" name="comments"></div>
 <script type="text/javascript">
   (function() {
    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
