@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{% assign post = page %}
+<h2><a href="{{ post.id }}" rel="bookmark">{{ post.title }}</a></h2>
+<p class="comments"><a href="http://www.sergimansilla.com/blog/?p=136#comments">{{ post.date | date:'%A, %B %d, %Y' | replace:' 0',' ' }}</a></p>
+<div class="main">{{ content }}</div>
+<div class="meta group">
+    <div class="signature">
+        <p>Posted by {{ site.author.name }} on {{ post.date | date:'%A, %B %d, %Y' | replace:' 0',' ' }}</p>
+    </div>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = 'http://sergimansilla.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=sergimansilla">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>

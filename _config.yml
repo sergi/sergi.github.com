@@ -1,0 +1,17 @@
+markdown: rdiscount
+pygments:       true
+permalink:      /:categories/:title/
+paginate:       5
+
+exclude:
+    - README.md
+
+title:          Sergi Mansilla
+url:            http://www.sergimansilla.com
+feed:           /atom.xml
+description:    "See how high your monkey jumps."
+
+author:
+    name:       Sergi Mansilla
+    email:      sergimansilla@gmail.com
+    twitter:    sergimansilla

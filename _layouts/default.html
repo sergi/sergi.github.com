@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="generator" content="Jekyll" />
+        <meta name="author" content="{{ site.author.name }}" />
+        <meta name="description" content="{{ site.description }}" />
+        <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="{{ site.feed }}" />
+        <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen, projection" />
+        <link href="css/syntax.css" rel="stylesheet" type="text/css" media="screen, projection" />
+        <link rel='index' title='{{ site.author }}' href='{{ site.url }}' />
+        <meta name="description" content="Sergi Mansilla. Experiments about programming, functional programming and monkey brains programming." />
+        <meta name="keywords" content="programming,development,functional,algorithms,cryptography,f#,javascript,gwt,java" />
+        <link rel="canonical" href="{{ site.url }}" />
+    </head>
+
+    <body>
+    <div id="container" class="group">
+        <h1><a href="/">Sergi Mansilla</a></h1>
+        <div id="bubble"><p>{{ site.description }}</p></div>
+        <div id="content" class="group">
+        {{content}}
+        </div>
+            <div id="sidebar">
+                <h3>Pages</h3>
+                <div class="textwidget">
+                    <ul>
+						<li><a href="about.html" title="About">About</a></li>
+                        <li><a href="http://sergi.tumblr.com/" rel="me" title="Adding some entropy">My tumblr</a></li>
+                    </ul>
+                </div>
+                <h3>Recent Posts</h3>
+                <ul>
+				{% for post in site.posts limit:10 %}
+                    <li><a href="{{ site.url }}{{ post.id }}" title="{{ post.title }}">{{ post.title }}</a></li>
+				{% endfor %}
+                </ul>
+                <h3>Blogroll</h3>
+                <ul class="xoxo blogroll">
+                    <li><a href="http://hyperstruct.net/" title="do flatlanders dream of n-dimensional shapes? ">hyperstruct</a></li>
+                    <li><a href="http://www.patricksimpson.nl/" rel="friend met">Patrick Simpson</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer">
+            <p>Template inspired by The Journalist template by <a href="http://lucianmarin.com/" rel="designer">Lucian E. Marin</a>
+            </p>
+        </div>
+		<script type="text/javascript">
+		//<![CDATA[
+		(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+		if(links[i].href.indexOf('#disqus_thread') >= 0) { query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&'; }
+		}
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/sergimansilla/get_num_replies.js' + query + '"></' + 'script>');
+		})();
+		//]]>
+		</script>
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-1807855-5");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
+    </body>
+</html>
