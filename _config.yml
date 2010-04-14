@@ -8,7 +8,7 @@ exclude:
 
 title:          Sergi Mansilla
 url:            http://www.sergimansilla.com/blog
-feed:           /atom.xml
+feed:           /blog/atom.xml
 description:    "See how high your monkey jumps."
 
 css:
