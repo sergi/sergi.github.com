@@ -28,7 +28,7 @@ namespace :deploy do
 
   desc "Deploy to Live"
   task :live => :build do
-    rsync "sergimansilla.com/blog"
+    rsync "sergimansilla.com/"
   end
 
   desc "Deploy to Dev and Live"
