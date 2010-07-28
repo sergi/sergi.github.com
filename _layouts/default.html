@@ -7,15 +7,10 @@
         <meta name="author" content="{{ site.author.name }}" />
         <meta name="description" content="{{ site.description }}" />
         <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="{{ site.feed }}" />
-        {% for css in site.css %}
-            <link rel="stylesheet" href="{{ css }}" type="text/css" />
-        {% endfor %}
-        {% for css in page.css %}
-            <link rel="stylesheet" href="{{ css }}" type="text/css" />
-        {% endfor %}
-        <link rel='index' title='{{ site.author }}' href='{{ site.url }}' />
-        <meta name="description" content="Sergi Mansilla. Experiments about programming, functional programming and monkey brains programming." />
-        <meta name="keywords" content="programming,development,functional,algorithms,cryptography,f#,javascript,gwt,java" />
+        {% for css in site.css %} <link rel="stylesheet" href="{{ css }}" type="text/css" /> {% endfor %}
+        {% for css in page.css %} <link rel="stylesheet" href="{{ css }}" type="text/css" /> {% endfor %}
+        <link rel='index' title='{{ site.author.name }}' href='{{ site.url }}' />
+        <meta name="keywords" content="{{ site.keywords }}" />
         <link rel="canonical" href="{{ site.url }}" />
         <script type="text/javascript">
           var _gaq = _gaq || [];
@@ -32,7 +27,7 @@
     <body>
     <div id="container" class="group">
         <h1><a href="/">{{ site.author.name }}</a></h1>
-        <div id="bubble"><p>{{ site.description }}</p></div>
+        <div id="bubble"><p>{{ site.baseline }}</p></div>
         <div id="content" class="group">
         {{content}}
         </div>
@@ -50,12 +45,6 @@
                     <li><a href="/blog{{ post.id }}" title="{{ post.title }}">{{ post.title }}</a></li>
                 {% endfor %}
                 </ul>
-                <!--
-                <h3>Blogroll</h3>
-                <ul class="xoxo blogroll">
-                    <li><a href="http://hyperstruct.net/" title="do flatlanders dream of n-dimensional shapes?" rel="friend met">hyperstruct</a></li>
-                    <li><a href="http://www.patricksimpson.nl/" rel="friend met">Patrick Simpson</a></li>
-                </ul>-->
                 <h3>Contact</h3>
                 <ul>
                     <li><a href="{{site.author.twitter}}">Twitter</a></li>
