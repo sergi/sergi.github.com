@@ -17,8 +17,18 @@
         <meta name="description" content="Sergi Mansilla. Experiments about programming, functional programming and monkey brains programming." />
         <meta name="keywords" content="programming,development,functional,algorithms,cryptography,f#,javascript,gwt,java" />
         <link rel="canonical" href="{{ site.url }}" />
-    </head>
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-1807855-5']);
+          _gaq.push(['_trackPageview']);
 
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+    </head>
     <body>
     <div id="container" class="group">
         <h1><a href="/">{{ site.author.name }}</a></h1>
@@ -59,25 +69,16 @@
             </p>
         </div>
 		<script type="text/javascript">
-		//<![CDATA[
-		(function() {
-		var links = document.getElementsByTagName('a');
-		var query = '?';
-		for(var i = 0; i < links.length; i++) {
-		if(links[i].href.indexOf('#disqus_thread') >= 0) { query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&'; }
-		}
-		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/sergimansilla/get_num_replies.js' + query + '"></' + 'script>');
-		})();
-		//]]>
+            //<![CDATA[
+            (function() {
+            var links = document.getElementsByTagName('a');
+            var query = '?';
+            for(var i = 0; i < links.length; i++) {
+            if(links[i].href.indexOf('#disqus_thread') >= 0) { query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&'; }
+            }
+            document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/sergimansilla/get_num_replies.js' + query + '"></' + 'script>');
+            })();
+            //]]>
 		</script>
-		<script type="text/javascript">
-		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-		<script type="text/javascript">
-		try {
-		var pageTracker = _gat._getTracker("UA-1807855-5");
-		pageTracker._trackPageview();
-		} catch(err) {}</script>
     </body>
 </html>
