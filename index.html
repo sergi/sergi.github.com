@@ -1,10 +1,26 @@
 ---
-layout: default
+layout: home
 title: Sergi Mansilla
 ---
-{% for post in site.posts limit:10 %}
-    <h2 style="border-bottom: 1px solid #666"><a href="/blog{{ post.id }}" rel="bookmark">{{ post.title }}</a></h2>
-    <p style="margin:15px 0 15px 0; font-weight: bold; color:#999">{{ post.date | date:'%B %d, %Y' | replace:' 0',' ' }}</p>
-    <div class="main">{{ post.content }}</div>
-    <p style="text-align: right"><a href="/blog{{ post.id }}#comments">Comments</a></p>
-{% endfor %}
+<div id="wrapper">
+<h1>So this is it.</h1>
+
+<p>My name is Sergi Mansilla, and you reached my personal site. Now that you are here, you could even take a look around.</p>
+
+<p>A few things about me:</p>
+<ul>
+<li>I work for TomTom making insanely great UI frameworks</li>
+<li>I am from Barcelona but I've been living in Amsterdam for a while</li>
+<li>Programming is my only superpower. It allows me to create.</li>
+<li>I hope someday I can use it to make the world better.</li>
+<li>I prefer functional over OOP</li>
+<li>My tools of trade are vim, mac, JavaScript and ocaml</li>
+<li>I like "Frikandels":http://en.wikipedia.org/wiki/Frikandel</li>
+</ul>
+<p>You can find me on any of those:<br/>
+<ul>
+<li><a href="blog.html" title="Blog">Blog</a></li>
+<li><a href="http://twitter.com/sergimansilla" title="Twitter">Twitter</a></li>
+<li><a href="http://github.com/sergi" title="Github profile">GitHub</a></li>
+</ul>
+</div>

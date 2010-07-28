@@ -7,8 +7,9 @@ exclude:
     - README.textile
 
 title:          Sergi Mansilla
-url:            http://www.sergimansilla.com/blog
-feed:           /blog/atom.xml
+url:            http://www.sergimansilla.com
+url_blog:       http://www.sergimansilla.com/blog.html
+feed:           atom.xml
 baseline:       "See how high your monkey jumps."
 description:    "Sergi Mansilla. Experiments about programming, functional programming and monkey brains programming."
 keywords:       "programming,development,functional,algorithms,cryptography,f#,javascript,gwt,java"
