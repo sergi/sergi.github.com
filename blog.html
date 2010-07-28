@@ -1,0 +1,10 @@
+---
+layout: default
+title: Sergi Mansilla
+---
+{% for post in site.posts limit:10 %}
+    <h2 style="border-bottom: 1px solid #666"><a href="/blog{{ post.id }}" rel="bookmark">{{ post.title }}</a></h2>
+    <p style="margin:15px 0 15px 0; font-weight: bold; color:#999">{{ post.date | date:'%B %d, %Y' | replace:' 0',' ' }}</p>
+    <div class="main">{{ post.content }}</div>
+    <p style="text-align: right"><a href="{{ post.id }}#comments">Comments</a></p>
+{% endfor %}
