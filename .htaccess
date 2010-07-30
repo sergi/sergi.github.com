@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteRule ^blog$ blog.html 
+RewriteRule ^blog/$ blog.html
+RewriteRule ^blog/(.*) $1
+
