@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GitHub in Catalan
-excerpt:
+keywords: github,catalan,i18n,catala
 ---
 This is awesome. From now on, Catalan users of GitHub can use the website in their native language. Thanks to the Github team initiative and the brilliant approach of crowd-sourcing the translations (along with some very convenient tooling to do so), I could translate almost all the strings of the website in a record time two weeks ago.
 
