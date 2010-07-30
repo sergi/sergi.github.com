@@ -81,6 +81,7 @@ width:75%;
 #content h2 {
 font-size:20px;
 margin:5px 0 7px 0;
+border-bottom: 1px solid #666;
 }
 
 #content h2 a {
@@ -102,9 +103,19 @@ border:none;
 text-align:left;
 }
 
+#content .date {
+margin:15px 0 15px 0;
+font-weight: bold;
+color:#999;
+}
+#content .comment_link {
+text-align: right;
+margin-bottom: 10px;
+}
 .comments {
 color:#333;
 margin:15px 0 15px 0;
+padding-bottom: 10px;
 border-bottom:#bbb 1px solid;
 font-weight: bold;
 }
