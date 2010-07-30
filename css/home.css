@@ -29,3 +29,11 @@ a {
     font-size: 20px;
     font-weight: normal;
 }
+
+#sergipic {
+    position: absolute;
+    top: 40px;
+    left:650px;
+    width:300px;
+    z-index: -1
+}
