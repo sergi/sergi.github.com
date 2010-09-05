@@ -17,22 +17,14 @@ task :stable do
   jekyll("--server --auto", "")
 end
 
-desc "Deploy to Dev"
-task :deploy => :"deploy:dev"
+desc "Deploy to Live"
+task :deploy => :"deploy:live"
 
 namespace :deploy do
-  desc "Deploy to Dev"
-  task :dev => :build do
-    rsync "dddev.appden.com"
-  end
-
   desc "Deploy to Live"
   task :live => :build do
-    rsync "sergimansilla.com/"
+    rsync "sergimansilla.com"
   end
-
-  desc "Deploy to Dev and Live"
-  task :all => [:dev, :live]
 
   def rsync(domain)
     sh "rsync -rtz --delete _site/ mrclash@sergimansilla.com:~/#{domain}/"
