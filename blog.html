@@ -1,17 +1,11 @@
 ---
 layout: default
+permalink: /blog/index.html
 ---
-{% for post in site.posts limit:10 %}
-    <h2>
-        <a href="{{ post.id }}" rel="bookmark">{{ post.title }}</a>
-    </h2>
-    <p class="date">
-        {{ post.date | date:'%B %d, %Y' | replace:' 0',' ' }}
-    </p>
-    <div class="main">
-        {{ post.content }}
-    </div>
-    <p class="comment_link">
-        <a href="{{ post.id }}#comments">Comments</a>
-    </p>
-{% endfor %}
+<h3>Blog Posts</h1>
+<ul class="posts">
+    {% for post in site.posts %}
+        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+
