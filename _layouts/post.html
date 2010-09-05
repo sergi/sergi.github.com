@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign post = page %}
 <h2><a href="{{ post.id }}" rel="bookmark">{{ post.title }}</a></h2>
-<p class="comments"><a href="#comments">{{ post.date | date:'%A, %B %d, %Y' | replace:' 0',' ' }}</a></p>
+<p class="date">{{ post.date | date:'%B %d, %Y' | replace:' 0',' ' }}</p>
 <div class="main">{{ content }}</div>
 <div class="comments"></div>
 <div id="disqus_thread" name="comments"></div>
