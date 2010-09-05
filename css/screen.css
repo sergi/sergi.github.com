@@ -1,21 +1,8 @@
-/*
-Theme Name: Journalist
-Theme URI: http://lucianmarin.com/
-Description: Journalist is a smart, minimal theme designed for professional journalists.
-Version: 1.9
-Author: <a href="http://lucianmarin.com/">Lucian E. Marin</a>
-Tags: white, two columns, fixed width, light, minimal
-For the WordPress community (GPL), enjoy it guys.
-by Lucian E. Marin - lucianmarin.com
-*/
-
 body {
 background:#fff url("../images/top.gif") repeat-x;
 font-family:"Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
-font-size:13px;
+line-height: 1.5;
 color:#222;
-padding:0;
-margin:0;
 }
 
 * {
@@ -32,6 +19,10 @@ a:hover {
 color:#c00;
 }
 
+code {
+    font-size: 115%;
+}
+
 #container {
 width:95%; /* this has nothing to do with the '911' event */
 margin:0 auto;
@@ -39,7 +30,7 @@ position:relative;
 }
 
 #container h1 {
-font-size:30px;
+font-size:200%;
 font-weight:normal;
 letter-spacing:-1px;
 width:600px;
@@ -73,23 +64,24 @@ padding:4px 12px 0 10px;
 background:url(../images/bubble_left.gif) no-repeat top left;
 }
 
+#header {
+margin-left: auto;
+margin-right: auto;
+width:80%;
+}
 #content {
-float:left;
-width:75%;
+margin-top: 20px;
+margin-left: auto;
+margin-right: auto;
+width:80%;
 }
 
-#content h2 {
-font-size:20px;
-margin:5px 0 7px 0;
-border-bottom: 1px solid #666;
-}
-
-#content h2 a {
+#content > h2 a {
 color:#222;
 text-decoration:none;
 }
 
-#content h2 a:hover {
+#content > h2 a:hover {
 color:#c00;
 }
 
@@ -150,9 +142,13 @@ color:#333;
 text-decoration:none;
 }
 
+.main h2 {
+    font-size: 150%;
+    border-bottom: 2pt dotted #ddd;
+}
 .main h3 {
-font-size:16px;
-font-weight:normal;
+font-size:18px;
+font-weight:bold;
 margin:0 0 15px 0;
 }
 
@@ -172,7 +168,7 @@ border:#ca0002 2px solid;
 }
 
 .main p {
-line-height:18px;
+text-align: justify;
 margin:0 0 15px 0;
 }
 
@@ -188,6 +184,17 @@ margin:0 0 15px 30px;
 
 .main li {
 margin:0 0 5px 0;
+}
+
+.main dl {
+    margin-left: 2em;
+}
+
+.main dl dt {
+    font-weight: bold;
+}
+.main dl dd {
+    margin-left: 2em;
 }
 
 .meta {
@@ -478,35 +485,6 @@ font-size:20px;
 margin:0 0 0 10px;
 }
 
-#wp-calendar {
-padding:10px 0 0 0;
-font-size:12px;
-}
-
-#wp-calendar caption {
-text-align:left;
-padding:0 0 5px 0;
-}
-
-#wp-calendar tr th,
-#wp-calendar tr td {
-padding:0 6px 0 0 ;
-text-align:right;
-}
-
-#wp-calendar td a {
-font-weight:bold;
-}
-
-#wp-calendar td a:hover {
-font-weight:bold;
-}
-
-img.wp-smiley {
-padding:0;
-border:none;
-}
-
 input:focus, textarea:focus{
 background-color:#ffc;
 }
@@ -589,4 +567,22 @@ display: inline;
 
 img {
 border: none;
+}
+#content > h2 > a {
+  margin: 1.5em 0 .75em 0; 
+  font-size: 100%;
+  border: 0;
+}
+.main > h2 {
+  margin: 1.5em 0 .75em 0;
+  border-bottom: 2pt dotted silver;
+  font-size: 130%;
+}
+#container h3 { margin: 1.5em 0 .5em 0; font-size: 125%; }
+ul.posts li {
+    list-style: none;
+}
+ul.posts li span {
+    color: #666;
+    font-family: Monaco,"Courier New",monospace;
 }
