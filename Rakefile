@@ -28,5 +28,6 @@ namespace :deploy do
 
   def rsync(domain)
     sh "rsync -rtz --delete _site/ mrclash@sergimansilla.com:~/#{domain}/"
+    sh "rsync -rtz projects/ mrclash@sergimansilla.com:~/#{domain}/"
   end
 end
