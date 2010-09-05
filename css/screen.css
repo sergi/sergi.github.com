@@ -1,13 +1,16 @@
+* {
+padding:0;
+margin:0;
+}
+
+html, body {
+    height: 100%;
+}
 body {
 background:#fff url("../images/top.gif") repeat-x;
 font-family:"Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
 line-height: 1.5;
 color:#222;
-}
-
-* {
-padding:0;
-margin:0;
 }
 
 a {
@@ -25,8 +28,9 @@ code {
 
 #container {
 width:95%; /* this has nothing to do with the '911' event */
-margin:0 auto;
 position:relative;
+height: auto !important;
+margin:0 auto;
 }
 
 #container h1 {
@@ -451,15 +455,13 @@ min-height:50px;
 }
 
 #footer {
-background:#eee;
-font-size:11px;
-color:#555;
-margin:0 auto;
-padding:10px 0;
-text-align:center;
-position:relative;
-border-top:#bbb 1px solid;
-border-bottom:#222 6px solid;
+width: 80%;
+border-top:4px solid #eee;
+color:#666666;
+font-size:80%;
+margin: 0 auto;
+margin-top:2em;
+overflow:hidden;
 }
 
 #footer a {
@@ -471,6 +473,15 @@ text-decoration:none;
 #footer a:hover {
 color:#333;
 text-decoration:none;
+}
+
+#footer .contact {
+    float: left;
+    margin-right: 3em;
+}
+
+#footer .contact p {
+    margin: 1em 0;
 }
 
 .clear {
