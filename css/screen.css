@@ -40,6 +40,12 @@ color:#222;
 text-decoration:none;
 }
 
+#content h2 a {
+margin: 1.5em 0 .75em 0; 
+font-size: 100%;
+border: 0;
+}
+
 a:hover,
 #container h1 a:hover,
 #content > h2 a:hover {
@@ -106,8 +112,9 @@ color:#c00;
 }
 
 .main h2 {
-font-size: 150%;
-border-bottom: 2pt dotted #ddd;
+margin: 1.5em 0 .75em 0;
+border-bottom: 2pt dotted silver;
+font-size: 130%;
 }
 .main h3 {
 font-size:18px;
@@ -160,7 +167,6 @@ margin:0 0 5px 0;
     margin-left: 2em;
 }
 
-
 blockquote {
 background:url(../images/quote.gif) no-repeat top left;
 padding:0 0 0 60px;
@@ -196,32 +202,7 @@ margin-right: 3em;
 margin: 1em 0;
 }
 
-.aligncenter {
-display: block;
-margin-left: auto;
-margin-right: auto;
-}
-
-.alignleft {
-float:left;
-}
-
-.alignright {
-float:right;
-}
-
 img { border: none; }
-
-#content > h2 > a {
-  margin: 1.5em 0 .75em 0; 
-  font-size: 100%;
-  border: 0;
-}
-.main > h2 {
-  margin: 1.5em 0 .75em 0;
-  border-bottom: 2pt dotted silver;
-  font-size: 130%;
-}
 
 ul.posts li {
     list-style: none;
