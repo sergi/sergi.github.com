@@ -23,6 +23,7 @@ The interpreter takes care of evaluating the arguments for each statement and th
 
 {% highlight javascript %}
 var Interpreter = function(canvas) {
+    this.canvas = canvas
     this.ctx = canvas.getContext('2d')
     this.vars = {}
 }
@@ -46,9 +47,9 @@ Interpreter.prototype = {
     },
     reset: function() {
         var ctx = this.ctx
-        var imageData = ctx.createImageData(ctx.canvas.width, ctx.canvas.height)
-        ctx.putImageData(imageData , 0, 0)
-        this.vars = {}
+        // Resets all cnavas state and properties
+        this.canvas.width = this.canvas.width
+        this.r = { vars: {}, cmds: {} }
     }
 }
 {% endhighlight %}
@@ -215,7 +216,7 @@ The local scope here is implemented in a naïve (and a bit inefficient) way. Bas
 
 h2. Demo
 
-That's it, you can try a quick demo here. In the demo page you can find some examples and you can play around to better understand how DBN works and what its powers and limitations are.
+That's it, you can try a quick demo "here":/projects/dbn/dbn.html. In the demo page you can find some examples and you can play around to better understand how DBN works and what its powers and limitations are.
 
 h2. Conclusion
 
