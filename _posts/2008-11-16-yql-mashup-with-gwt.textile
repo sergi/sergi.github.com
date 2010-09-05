@@ -69,7 +69,8 @@ public void executeQuery(String keyword)
     // Makes the request using OAuth, which calls our just created callback
     // and adds the response as a scrito the page
     this.addScript(OAuth.makeSignedRequest(
-        flyqlr.Y_KEY, flyqlr.Y_SECRET, flyqlr.YQL_URL + "q=" + query + "&amp;format=json" + "&amp;callback=" + callback));
+        flyqlr.Y_KEY, flyqlr.Y_SECRET, flyqlr.YQL_URL 
+            + "q=" + query + "&amp;format=json" + "&amp;callback=" + callback));
 }
 
 {% endhighlight %}
