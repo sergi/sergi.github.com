@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>{% if page.title %} {{ page.title }} {% else %} {{ site.title }} {% endif %}</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta charset="utf-8">
         <meta name="generator" content="Jekyll" />
         <meta name="author" content="{{ site.author.name }}" />
         <meta name="description" content="{% if page.excerpt %} {{ page.excerpt }} {% else %} {{ site.description }} {% endif %}" />
@@ -25,37 +25,16 @@
     </head>
     <body>
     <div id="container" class="group">
-        <h1><a href="/blog/">{{ site.author.name }}</a></h1>
+        <div id="header">
+            <h1><a href="/blog/">{{ site.author.name }}</a></h1>
+        </div>
         <div id="bubble"><p>{{ site.baseline }}</p></div>
-        <div id="content" class="group">
-        {{content}}
-        </div>
-            <div id="sidebar">
-                <h3>Pages</h3>
-                <div class="textwidget">
-                    <ul>
-                        <li><a href="http://www.sergimansilla.com" title="About">About</a></li>
-                        <li><a href="http://sergi.tumblr.com/" rel="me" title="Adding some entropy">Tumblr</a></li>
-                    </ul>
-                </div>
-                <h3>Recent Posts</h3>
-                <ul>
-				{% for post in site.posts limit:10 %}
-                    <li><a href="/blog{{ post.id }}" title="{{ post.title }}">{{ post.title }}</a></li>
-                {% endfor %}
-                </ul>
-                <h3>Contact</h3>
-                <ul>
-                    <li><a href="{{site.author.twitter}}">Twitter</a></li>
-                    <li><a href="{{site.author.github}}">Github</a></li>
-                    <li><a href="{{site.author.linkedin}}">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="footer">
-            <p>Template inspired by The Journalist template by <a href="http://lucianmarin.com/" rel="designer">Lucian E. Marin</a>
-            </p>
-        </div>
+        <div id="content" class="group">{{content}} </div>
+    </div>
+    <div id="footer">
+        <p>Template inspired by The Journalist template by <a href="http://lucianmarin.com/" rel="designer">Lucian E. Marin</a>
+        </p>
+    </div>
 		<script type="text/javascript">
             //<![CDATA[
             (function() {
