@@ -1,15 +1,16 @@
 markdown: rdiscount
 pygments:       true
-permalink:      /:title/
+permalink:      /blog/:title/
 paginate:       5
 
 exclude:
     - README.textile
     - Rakefile
+    - .htaccess
 
 title:          Sergi Mansilla
 url:            http://www.sergimansilla.com
-url_blog:       http://www.sergimansilla.com/blog.html
+url_blog:       http://www.sergimansilla.com/blog
 feed:           atom.xml
 baseline:       "See how high your monkey jumps."
 description:    "Sergi Mansilla. Experiments about programming, functional programming and monkey brains programming."
