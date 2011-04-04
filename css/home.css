@@ -8,6 +8,11 @@ a {
     text-decoration:underline;
 }
 
+.blogposts li {
+    list-style: none;
+    line-height:1.50em;
+}
+
 #wrapper {
     margin: 0px auto 0px 0px;
     padding-bottom: 0px;
@@ -17,7 +22,7 @@ a {
 }
 
 #wrapper h1 {
-   font-family: Georgia, Garamond, serif; 
+   font-family: Georgia, Garamond, serif;
    font-size: 64px;
    font-weight: normal;
    line-height: 40px;
@@ -25,7 +30,7 @@ a {
 }
 
 #wrapper p {
-    font-family: Georgia, Garamond, serif; 
+    font-family: Georgia, Garamond, serif;
     font-size: 20px;
     font-weight: normal;
 }

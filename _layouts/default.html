@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% if page.title %} {{ page.title }} {% else %} {{ site.title }} {% endif %}</title>
+        <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
         <meta charset="utf-8">
         <meta name="generator" content="Jekyll" />
         <meta name="author" content="{{ site.author.name }}" />
-        <meta name="description" content="{% if page.excerpt %} {{ page.excerpt }} {% else %} {{ site.description }} {% endif %}" />
-        <meta name="keywords" content="{% if page.keywords %} {{ page.keywords }} {% else %} {{ site.keywords }} {% endif %}" />
+        <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.description }}{% endif %}" />
+        <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}" />
         <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="{{ site.feed }}" />
         {% for css in site.css %}<link rel="stylesheet" href="{{ css }}" type="text/css" />{% endfor %}
         {% for css in page.css %}<link rel="stylesheet" href="{{ css }}" type="text/css" />{% endfor %}
@@ -49,7 +49,7 @@
     </div>
     </div>
 
-    
+
 		<script type="text/javascript">
             //<![CDATA[
             (function() {
