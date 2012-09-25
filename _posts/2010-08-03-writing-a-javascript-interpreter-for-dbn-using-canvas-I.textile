@@ -3,7 +3,6 @@ layout: post
 title: Writing a JavaScript interpreter for DBN using PEG.js and canvas (Part I)
 keywords: dbn,parser,javascript,peg,pegjs,canvas,html5,language,lexer,token,interpreter
 excerpt: In this first part of the article, I will define a grammar for DBN and generate a parser for it, so I can interpret the syntax tree it later on with JavaScript and draw it into an HTML5 Canvas.
-
 ---
 
 *_In this first part of the article, I will define a grammar for DBN(Design By Numbers) and generate a parser for it that outputs an AST(Abstract Syntax Tree), so I can interpret the syntax tree it later on with JavaScript and draw it into an HTML5 Canvas._*

@@ -2,6 +2,7 @@
 layout: post
 title: ABN Amro to Wesabe script
 ---
+
 "Wesabe":http://www.wesabe.com is a great service. And a very big part of its greatness resides in the fact that it retrieves your bank accounts data automatically from their sources whenever you log in into the page.
 
 That is, if you don't have a Dutch bank account.

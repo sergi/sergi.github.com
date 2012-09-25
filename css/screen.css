@@ -1,212 +1,262 @@
+/* Global Reset */
+
 * {
-padding:0;
-margin:0;
+  margin: 0;
+  padding: 0;
 }
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+}
+
 body {
-background:#fff url("../images/top.gif") repeat-x;
-font-family:"Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
-line-height: 1.5;
-color:#222;
+  background-color: white;
+  font-family: "gentium book basic", Georgia;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+p {
+  margin: 1em 0;
 }
 
 a {
-color:#047;
-text-decoration:underline;
+    color: #304766;
 }
 
-code {
-font-size: 115%;
+a:visited {
+  color: #EE4F09;
 }
 
-#container {
-width:95%; /* this has nothing to do with the '911' event */
-position:relative;
-height: auto !important;
-margin:0 auto;
+li {
+    list-style-type: none;
 }
 
-#container h1 {
-font-size:200%;
-font-weight:normal;
-letter-spacing:-1px;
-padding:32px 0 25px 0;
+table {
+  font-size: inherit;
+  font: 100%;
 }
 
-#container h1 a,
-#content h2 a {
-color:#222;
-text-decoration:none;
+/** Top bar CSS */
+.topbar {
+    background-color: #000;
+    display: block;
+    border: 0;
+    height: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    box-shadow: 0 0 10px #666;
 }
 
-#content h2 a {
-margin: 1.5em 0 .75em 0;
-font-size: 100%;
+.container {
+    width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    zoom: 1;
 }
 
-a:hover,
-#container h1 a:hover,
-#content > h2 a:hover {
-color:#c00;
+.container::before, .container::after {
+    display: table;
+    content: "";
+    zoom: 1;
 }
-#container h3 {
-margin: 1.5em 0 .5em 0;
-font-size: 125%;
-}
-
-#bubble {
-top:40px;
-right:0;
-position:absolute;
-display:block;
-height:28px;
-background:url(../images/bubble_right.gif) no-repeat right;
+.container::after {
+    clear: both;
 }
 
-#bubble p {
-display:block;
-font-size:11px;
-color:#fff;
-height:28px;
-padding:4px 12px 0 10px;
-background:url(../images/bubble_left.gif) no-repeat top left;
+.topbar div > ul, .nav {
+    display: block;
+    float: left;
+    margin: 8px 20px 0 0;
+    position: relative;
+    left: 0;
 }
 
-#header, #content {
-margin-left: auto;
-margin-right: auto;
-width:80%;
-}
-#content {
-margin-top: 20px;
+/*************/
+
+li {
+    line-height: 18px;
+    color: gray;
 }
 
-#content .date {
-margin:15px 0 15px 0;
-font-weight: bold;
-color:#999;
-}
-#content .comment_link {
-text-align: right;
-margin-bottom: 10px;
-}
-.comments {
-color:#333;
-margin:15px 0 15px 0;
-padding-bottom: 10px;
-border-bottom:#bbb 1px solid;
-font-weight: bold;
+#siteTitle {
+    width: 700px;
+    font: 400 48px/26px "gentium book basic", Georgia;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.comments a {
-background:#fff;
-padding:0 7px 5px 0;
-color:#333;
-text-decoration:none;
+#siteTitle a {
+    color: #000;
+    text-decoration: none;
 }
 
-.comments a:hover {
-color:#c00;
+ul.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
 }
 
-.main h2 {
-margin: 1.5em 0 .75em 0;
-border-bottom: 2pt dotted silver;
-font-size: 130%;
-}
-.main h3 {
-font-size:18px;
-font-weight:bold;
-margin:0 0 15px 0;
+  ul.posts li {
+    line-height: 1.75em;
+  }
+
+  ul.posts span {
+    color: #aaa;
+    font-family: Monaco, "Courier New", monospace;
+    font-size: 80%;
+  }
+
+.site {
+  font-size: 110%;
+  text-align: justify;
+  margin: 2em auto 2em auto;
+  line-height: 1.5em;
+  float: left;
+  width: 700px;
 }
 
-.main img {
-padding:2px;
-border:#ddd 2px solid;
+#home {
+    line-height: 150%;
 }
 
-.main a img {
-padding:2px;
-border:#0085b5 2px solid;
+#home li {
+    width: 700px;
+    line-height: 150%;
+    list-style-type: none;
 }
 
-.main a:hover img {
-padding:2px;
-border:#ca0002 2px solid;
+#home li span {
+    float: right;
 }
 
-.main p {
-text-align: justify;
-margin:0 0 15px 0;
+#post > h1 {
+    font: 26px "gentium book basic", Georgia;
 }
 
-.main ol {
-line-height:18px;
-margin:0 0 15px 30px;
+#post > h1 a {
+    margin-top: 20px;
+    color: #000;
+    text-decoration: none;
 }
 
-.main ul {
-line-height:18px;
-margin:0 0 15px 30px;
+#post > h1 a:hover {
+    color: #006;
+    text-decoration: none;
 }
 
-.main li {
-margin:0 0 5px 0;
-}
-
-.main dl {
-    margin-left: 2em;
-}
-
-.main dl dt {
+#post > h2 {
+    font: 20px "gentium book basic", Georgia;
     font-weight: bold;
 }
-.main dl dd {
-    margin-left: 2em;
+
+#post p {
+    color: #333;
+    font: 400 18px/26px "gentium book basic", Georgia;
 }
 
-blockquote {
-background:url(../images/quote.gif) no-repeat top left;
-padding:0 0 0 60px;
-min-height:50px;
+#post p.meta {
+    font-style: italic;
+    color: #999;
 }
 
-#footer {
-width: 80%;
-border-top:4px solid #eee;
-color: #666;
-font-size:80%;
-margin: 0 auto;
-margin-top:2em;
-overflow:hidden;
+  /* standard */
+
+  #post pre {
+    border: 1px solid #ddd;
+    background-color: #000;
+    padding: 1em 1em;
+    line-height: 1;
+  }
+
+  #post ul,
+  #post ol {
+    margin-left: 1.35em;
+  }
+
+  #post code {
+    border: 1px solid #ddd;
+    font-size: 18px;
+    font-family: 'Inconsolata', monospace;
+  }
+
+    #post pre code {
+      border: none;
+    }
+
+  /* terminal */
+
+  #post pre.terminal {
+    border: 1px solid black;
+    background-color: #333;
+    color: white;
+  }
+
+  #post pre.terminal code {
+    background-color: #333;
+  }
+
+#related {
+  margin-top: 2em;
 }
 
-#footer a {
-color:#555;
-font-weight:bold;
-text-decoration:none;
+  #related h2 {
+    margin-bottom: 1em;
+  }
+
+#post blockquote {
+  font: 14px/20px italic Times, serif;
+  padding: 8px;
+  background-color: #eee;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin: 5px;
+  text-indent: 23px;
 }
 
-#footer a:hover {
-color:#333;
+#post blockquote span {
+    display: block;
+    color: #999;
 }
 
-#footer .contact {
-float: left;
-margin-right: 3em;
+.contact a {
+    font: 400 18px/26px "gentium book basic", Georgia;
+    padding-top: 10px;
+    color: #999;
+    font-style: italic;
 }
 
-#footer .contact p {
-margin: 1em 0;
+#navcontainer {
+    text-align: center;
 }
 
-img { border: none; }
+#navlist li
+{
+display: inline;
+list-style-type: none;
+padding-right: 20px;
+font-size: 110%;
+}
 
-ul.posts li {
-    list-style: none;
+#wrap {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
-ul.posts li span {
-    color: #666;
-    font-family: Monaco,"Courier New",monospace;
+
+#wrap2 {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
+

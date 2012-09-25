@@ -3,6 +3,7 @@ layout: post
 title: Solitaire Encryption Algorithm implementation in F#
 excerpt: Implementation of Bruce Schneier's solitaire encryption algorithm using Microsoft's new functional programming language F-sharp.
 ---
+
 I first read about the "Solitaire algorithm":http://www.schneier.com/solitaire.html in the novel "Cryptonomicon":http://en.wikipedia.org/wiki/Cryptonomicon, by Neal Stephenson. Being a geeky kid fascinated by computers I thought that it was a brilliant idea, but my curiosity didn't go so far as to make me write an implementation of it (you can find a perl version in the book, which by the way I consider to be another great way to encrypt information).
 
 Solitaire is a "stream cipher(Stream Cipher)":http://en.wikipedia.org/wiki/Stream_cipher created by "Bruce Schneier":http://www.schneier.com and designed to be used with only a deck of cards. No electronic devices are needed and its security is intended to be of military-strength; that means that even if the way to generate/decipher messages is manual and might look a bit rudimentary, ideally not even the most powerful government could ever decipher a message generated with Solitaire (although some potential flaws have been "reported":http://www.ciphergoth.org/crypto/solitaire).

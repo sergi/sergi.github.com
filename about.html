@@ -6,16 +6,26 @@ title: About
 css:
     - ../css/screen.css
     - ../css/syntax.css
-
-text:
-- I am Sergi Mansilla, a software developer from Barcelona living in Amsterdam since 2006. I currently work at <a href="http://www.ajax.org">Ajax.org</a> as a JavaScript developer working on the amazing <a href="http://www.ajax.org/cloud9ide.html">Cloud 9 IDE</a>, and before that I was working at TomTom International where I helped develop the framework that powers the UI of the latest devices and also worked on products such as <a href="http://www.tomtom.com/services/service.php?id=16&Lid=4">TomTom Home</a> and some other, all of them based on JavaScript.
-
-    - I spend a portion of my free time developing my own projects, mostly in JavaScript now, but also in other (mostly functional) languages like Scheme or Ocaml. I am in fact quite passionate about coding. You can see some of my projects <a href="http://github.com/sergi">here</a>.
 ---
-<h2>About me</h2>
-<div class="comments"></div>
-<div class="main">
-{% for p in page.text %}
-    <p>{{ p }}</p>
-{% endfor %}
+<div id="wrapper">
+    <h1>Hi. I'm Sergi</h1>
+    <h2>and that's me with a hat.</h2>
+    <img id="sergipic" src="/images/sergi.jpeg" alt="Me with a hat" />
+
+    <p>You just reached my site. Now that you are here, you could even take a look around.</p>
+
+    <p>A few things about me:</p>
+
+    - I work for <a href="http://c9.io">Cloud 9</a> making the Cloud9 IDE.<br/>
+    - I prefer functional.<br/>
+    - My tools of trade are Cloud9, vim, mac, JavaScript and ocaml.<br/>
+    - I like <a href="http://en.wikipedia.org/wiki/Frikandel">Frikandels</a>.<br/>
+
+    <p>You can find me on any of those:<br/>
+    <ul>
+        <li><a href="{{site.author.twitter}}" title="Twitter">Twitter</a></li>
+        <li><a href="{{site.author.github}}" title="Github profile">GitHub</a></li>
+        <li><a href="https://plus.google.com/108447529408245632723/posts" title="Google+">Google+</a></li>
+        <li><a href="{{site.author.linkedin}}" title="LinkedIn">LinkedIn</a></li>
+    </ul>
 </div>

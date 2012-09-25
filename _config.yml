@@ -1,7 +1,7 @@
 markdown: rdiscount
-pygments:       true
-permalink:      /blog/:title/
-paginate:       5
+pygments: true
+permalink: /blog/:title/
+paginate: 5
 
 exclude:
     - README.textile
@@ -9,12 +9,12 @@ exclude:
     - .htaccess
 
 title:          Sergi Mansilla
-url:            http://www.sergimansilla.com
-url_blog:       http://www.sergimansilla.com/blog
+url:            http://sergimansilla.com
+url_blog:       http://sergimansilla.com/blog
 feed:           atom.xml
 baseline:       "See how high your monkey jumps."
-description:    "Sergi Mansilla. Experiments about programming, functional programming and monkey brains programming."
-keywords:       "programming,development,functional,algorithms,cryptography,f#,javascript,gwt,java"
+description:    "Sergi Mansilla. Experiments about functional programming and monkey brains programming."
+keywords:       "programming,development,functional,algorithms,cryptography,f#,javascript,javascript"
 
 css:
     - /css/screen.css
@@ -22,7 +22,8 @@ css:
 
 author:
     name: Sergi Mansilla
-    email: sergimansilla@gmail.com
+    email: sergi.mansilla+spam@gmail.com
     twitter: http://twitter.com/sergimansilla
     github: http://github.com/sergi
+    gplus: https://plus.google.com/108447529408245632723
     linkedin: http://nl.linkedin.com/in/smansilla

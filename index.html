@@ -1,74 +1,23 @@
 ---
-layout: home
+layout: default
 title: Sergi Mansilla
 permalink: /index.html
 ---
-<div id="wrapper">
-    <h1>Hi. I'm Sergi Mansilla</h1>
-    <h2>and that on the right is a picture of me with a hat.</h2>
-
-    <p>You just reached my personal site. Now that you are here, you could even take a look around.</p>
-
-    <p>Latest Blog posts</p>
-    <ul class="blogposts">
-        {% for post in site.posts %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-    </ul>
-    <p>A few things about me:</p>
+<div id="home">
     <ul>
-        <li>I have a <a href="blog" title="Sergi Mansilla - Blog">blog</a>.</li>
-        <li>I work for <a href="http://www.ajax.org">Ajax.org</a> making the Cloud9 IDE.</li>
-        <li>I am from Barcelona but I've been living in Amsterdam for a while.</li>
-        <li>Programming is my only superpower. It allows me to create.</li>
-        <li>I prefer functional over OOP.</li>
-        <li>My tools of trade are vim, mac, JavaScript and ocaml.</li>
-        <li>I like <a href="http://en.wikipedia.org/wiki/Frikandel">Frikandels</a></li>
-    </ul>
-    <p>You can find me on any of those:<br/>
-    <ul>
-        <li><a href="http://twitter.com/sergimansilla" title="Twitter">Twitter</a></li>
-        <li><a href="http://github.com/sergi" title="Github profile">GitHub</a></li>
-        <li><a href="{{site.author.linkedin}}" title="LinkedIn">LinkedIn</a></li>
-        <li><a href="http://sergi.tumblr.com/" rel="me" title="Adding some entropy">Tumblr</a></li>
-        <li><a href="http://www.dailymile.com/people/sergi" title="Dailymile profile">Dailymile</a></li>
-    </ul>
+    {% for post in site.posts %}
+        {% if post.published != false %}
+        <!--<div id="post">-->
+        <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <span>{{ post.date | date_to_string }}</span>
+        </li>
+            <!--
+            <p class="meta">{{ post.date | date_to_string }} Amsterdam</p>
+            {{ post.content }}
+            -->
+        <!--</div>-->
+        {% endif %}
+    {% endfor %}
+</ul>
 </div>
-<div id="right">
-    <img id="sergipic" src="images/sergi.jpeg" alt="Me with a hat" />
-
-</div>
-<!--
-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-<script>
-new TWTR.Widget({
-  version: 2,
-  type: 'profile',
-  rpp: 5,
-  interval: 6000,
-  width: 300,
-  height: 300,
-  theme: {
-    shell: {
-      background: '#555555',
-      color: '#ffffff'
-    },
-    tweets: {
-      background: '#ffffff',
-      color: '#000000',
-      links: '#004377'
-    }
-  },
-  features: {
-    scrollbar: false,
-    loop: false,
-    live: false,
-    hashtags: true,
-    timestamp: true,
-    avatars: false,
-    behavior: 'all'
-  }
-}).render().setUser('sergimansilla').start();
-</script>
--->
-

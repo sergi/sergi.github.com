@@ -3,6 +3,7 @@ layout: post
 title: YQL mashup with GWT
 excerpt: In this post I build a simple mashup with Google Web Toolkit that uses Yahoo Query language to retrieve pictures from flickr and render them in a small GWT component.
 ---
+
 p. Yahoo came up with YQL a few weeks ago, and I think it is a very interesting idea. It is basically a SQL-like language that allows developers to retrieve structured data from multiple Yahoo web services without having to deal with each service particularities; the developer can query any service in a generic way, just like he would do retrieving rows and columns from a SQL database.
 
 An example of YQL query to retrieve the 5 first results returned by the search engine with the keyword "pizza" would be:

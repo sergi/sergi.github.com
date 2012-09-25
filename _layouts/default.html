@@ -1,66 +1,71 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-        <meta charset="utf-8">
-        <meta name="generator" content="Jekyll" />
-        <meta name="author" content="{{ site.author.name }}" />
-        <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.description }}{% endif %}" />
-        <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}" />
-        <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="{{ site.feed }}" />
-        {% for css in site.css %}<link rel="stylesheet" href="{{ css }}" type="text/css" />{% endfor %}
-        {% for css in page.css %}<link rel="stylesheet" href="{{ css }}" type="text/css" />{% endfor %}
-        <link rel="canonical" href="{{ site.url }}" />
-        <script type="text/javascript">
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-1807855-5']);
-          _gaq.push(['_trackPageview']);
+<html lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>{{ page.title }}</title>
+    <meta name="author" content="Sergi Mansilla" />
 
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-        </script>
-    </head>
-    <body>
-    <div id="container" class="group">
-        <div id="header">
-            <h1><a href="/blog/">{{ site.author.name }}</a></h1>
+    <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic' rel='stylesheet' type='text/css'>
+    <script type="text/javascript">
+       var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-1807855-5']);
+       _gaq.push(['_trackPageview']);
+
+       (function() {
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+     </script>
+</head>
+<body>
+<!-- Top black bar above the page -->
+<div class="topbar"><div class="fill"><div class="container"></div></div></div>
+
+<div id="wrap">
+    <div id="wrap2">
+        <div id="siteTitle"><a href="/">Sergi Mansilla</a></div>
+
+        <div id="navcontainer">
+            <ul id="navlist">
+            <li><a href="/">Blog</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <!--
+                <li><a href="/talks">Talks</a></li>
+            -->
+            <li><a href="{{site.author.twitter}}">Twitter</a></li>
+            </ul>
         </div>
-        <div id="bubble"><p>{{ site.baseline }}</p></div>
-        <div id="content" class="group">{{content}} </div>
-        <div id="footer">
 
-    <div class="contact">
-      <p>
-        Code<br />
-        Sergi Mansilla<br />
-        sergi.mansilla [at] gmail
-      </p>
+        <div class="site">
+          {{ content }}
+          <div class="footer">
+              <br/>
+            <div class="contact">
+              <p>
+                <a href="http://sergimansilla.com">Copyright 2012 Sergi Mansilla</a>
+              </p>
+            </div>
+          </div>
+        </div>
     </div>
-    <div class="contact">
-      <p>
-        <a href="http://github.com/sergi/">github.com/sergi</a><br />
-        <a href="http://sergimansilla.com/blog">sergimansilla.com/blog</a><br />
-        <a href="http://twitter.com/sergimansilla/">twitter.com/sergimansilla</a><br />
-      </p>
-    </div>
-    </div>
-    </div>
+</div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'sergimansilla'; // required: replace example with your forum shortname
 
-
-		<script type="text/javascript">
-            //<![CDATA[
-            (function() {
-            var links = document.getElementsByTagName('a');
-            var query = '?';
-            for(var i = 0; i < links.length; i++) {
-            if(links[i].href.indexOf('#disqus_thread') >= 0) { query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&'; }
-            }
-            document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/sergimansilla/get_num_replies.js' + query + '"></' + 'script>');
-            })();
-            //]]>
-		</script>
-    </body>
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
 </html>
+

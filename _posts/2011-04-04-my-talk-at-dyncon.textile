@@ -14,9 +14,11 @@ This talk was especially interesting to me because although the audience include
 The best part was to see how programmers from all kinds of backgrounds were equally interested in having the advantages of a development platform like Cloud9 on the Cloud. It is incredibly motivating to get approval and excitement from the very audience that we are targeting with Cloud9.
 
 
-As a side note, it is amazing how much our own perception of past events diverges from the real thing. I thought the talk was quite fluent, but I can (painfully) see that I could have used more practice (LOTS of “ums”, especially at the beginning!). Ah well…it was my first big public talk, so I guess this is to be expected :) I’ve taken notes and my next talk will be much better!
+As a side note, it is amazing how much our own perception of past events diverges from the real thing. I thought the talk was quite fluent, but I can (painfully) see that I could have used more practice (LOTS of “ums”, especially at the beginning!). Ah well…it was my first big public talk, so I guess this is to be expected :)
 
 Still, it’s a talk I’m proud of about a product that I’m proud of. Check it out if you want to see a glimpse of the future of development!!
+
+*Update:* Find the slides for the talk "here":http://www.slideshare.net/sergimansilla/introducing-cloud9-at-dyncon-2011
 
 p=. <iframe src="http://player.vimeo.com/video/21912872?byline=0&amp;portrait=0" width="400" height="295" frameborder="0"></iframe>
 
