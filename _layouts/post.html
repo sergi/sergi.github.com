@@ -3,7 +3,7 @@ layout: default
 ---
 <div id="post">
     <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
-    <p class="meta">{{ page.date | date_to_string }} Amsterdam</p>
+    <p class="meta">{{ page.date | date: "%d %B %Y" }}, Amsterdam</p>
     <div class="entry">
     {{ content }}
 </div>
