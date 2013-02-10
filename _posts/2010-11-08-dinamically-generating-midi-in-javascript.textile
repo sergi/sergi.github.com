@@ -40,7 +40,7 @@ song.save();
 {% endhighlight %}
 
 The library is work in progress, but it already outputs standard MIDI files ("SMF":http://www.midi.org/aboutmidi/tut_midifiles.php) encoded in "base64":http://en.wikipedia.org/wiki/Base64, and can play them in any browser that has a plugin that can reproduce MIDI installed. It is usually Quicktime in most machines. And now, please allow me to rant a little bit...
-
+<!--more-->
 h2. The surprisingly bad state of MIDI in the browser
 
 While developing this small library I was shocked at how inconsistent the state of MIDI reproducibility is in the browser. I might have been very naive, but I expected that a MIDI file would just sound right away inside a browser. Boy was I wrong.

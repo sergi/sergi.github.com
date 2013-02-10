@@ -56,7 +56,7 @@ Interpreter.prototype = {
 
 The global variables will reside in the <code>vars</code> property, and the most important methods here are obviously <code>evalType</code> and <code>evalExpression</code>.
 
-
+<!--more-->
 h3. Evaluating types
 
 <code>evalType</code> receives the type object and its scope and calls the proper static method in <code>Interpreter.typeTable</code> with the same parameters. <code>Interpreter.typeTable</code> holds the functions that interpret the different types in DBN:

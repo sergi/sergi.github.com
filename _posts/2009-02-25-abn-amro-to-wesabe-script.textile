@@ -10,6 +10,7 @@ That is, if you don't have a Dutch bank account.
 The reason for this is that the security of Internet banking in The Netherlands is quite strong, probably much more than the ones in the US (where most Wesabe users are from). Every bank customer owns a little device in which you have to put your bank card in, type your PIN number, type a number given to you by the bank website, and type back the code calculated by the device. Only then you can access your personal bank website. Once in the site, you will have to repeat this process for every transaction or order that you make.
 
 I much rather prefer this increased security when it comes to Internet banking as it adds an extra layer of security that makes it much more difficult to hack illegally into people's bank accounts, but this also means that Wesabe (obviously) won't be able to access the data in my bank website automatically.
+<!--more-->
 Thus, the process for the suffered dutch-account-owners/Wesabe users (category in which I happen to fall in), is the following:
 
 * Download "ABN Amro's":http://www.abnamro.nl own QIF(Quicken Interchange Format) format for transactions

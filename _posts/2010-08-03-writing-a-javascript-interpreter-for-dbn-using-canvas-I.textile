@@ -12,7 +12,7 @@ excerpt: In this first part of the article, I will define a grammar for DBN and 
 Unfortunately, DBN(Design By Numbers) hasn’t been open-sourced and the documentation of it is almost nonexisting, let alone any official specification of the language. There is only "one book":http://www.amazon.com/Design-Numbers-John-Maeda/dp/0262632446 written about it (although a "blurry copy":http://books.google.com/books?id=cptXSf5kS_IC&printsec=frontcover&dq=design+by+numbers&hl=en&ei=9ShZTIDxLsu6OO6D1bAJ&sa=X&oi=book_result&ct=result&resnum=1&ved=0CCoQ6AEwAA#v=onepage&q&f=false exists in google books, censored enough to miss very important parts), and the DBN software amounts to a "Java applet":http://dbn.media.mit.edu/dbn/applet.html in the official website and a Java program that you can run on your own computer.
 
 All this lack of proper information was a challenge enough to get me interested on building a JavaScript interpreter for it (this, and my deep hatred for Java applets) and a good excuse to play with some cool JavaScript technologies.
-
+<!--more-->
 h2. Crash course in PEG.js grammar definitions
 
 "PEG.js":http://pegjs.majda.cz/ is a parser generator for JavaScript. Given a proper grammar definition of the language, it will generate a parser for it that you can use wherever.
@@ -30,17 +30,17 @@ Ok, so the first thing to do is to define the building bocks for the language. N
 {% highlight javascript %}
 variable
  = v:([a-zA-Z_][a-zA-Z0-9_]*) { // The first character must not be a number
-     return { 
+     return {
        type: "string",
        value: v.join("")
-     } 
+     }
    }
 
 integer
-  = digits:[0-9]+ { 
-      return { 
-        type: "integer", 
-        value: parseInt(digits.join(""), 10) 
+  = digits:[0-9]+ {
+      return {
+        type: "integer",
+        value: parseInt(digits.join(""), 10)
       }
     }
 
@@ -62,21 +62,21 @@ special // Matches expressions of the form <command value1 value2 ...>
   }
 
 additive
-  = left:muldiv _ sign:[+-] _ right:additive { 
-      return { 
-        type: "command", 
-        name:sign, 
-        args:[left,right] 
+  = left:muldiv _ sign:[+-] _ right:additive {
+      return {
+        type: "command",
+        name:sign,
+        args:[left,right]
       }
     }
   / muldiv
 
 muldiv
   = left:primary _ sign:[*/] _ right:muldiv {
-      return { 
-        type: "command", 
-        name: sign, 
-        args:[left, right] 
+      return {
+        type: "command",
+        name: sign,
+        args:[left, right]
       }
     }
   / primary
@@ -103,7 +103,7 @@ As you can see, the language is very clear and takes inspiration from regular ex
 A rule is composed of several parts: its name, the matching expression and the optional _parser action_, which is enclosed between brackets and transforms the output of the rule.
 
 For example, for the <code>point</code> rule:
- 
+
 {% highlight javascript %}
 point
  = "[" left:value ws right:value "]" // <-- This is the matching expression
@@ -179,7 +179,7 @@ Let's break the matching expresion down:
 - <code>args:((ws+ value)+)?</code> := Match 0 or more DBN <code>value</code> expressions preceded by a whitespace and label them as "args".
 - <code>lb+</code> := Match at least one linebreak.
 &nbsp;
- 
+
 p. In case an expression <code>command</code> is matched, we will pass the <code>cmd</code> and the <code>args</code> results to the parsing expression, who will return an object with some particular properties that manipulate the values in the way we want. In that case we just do some basic filtering to the arrays resulting from the matches.
 
 An important thing to note down is that any match gotten using the operators <code>[]</code> <code>*</code> or <code>+</code> will return an array with as many coincidences as there are in the matching expression. That means that we will have to take care of filtering these arrays so we obtain the results we want. A clear example is the <code>cmd</code> variable, which returns an array with all the characters of the command name matched, so in the parsing expression we have to join it to form a real string.

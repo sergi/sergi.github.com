@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
-<div id="post">
+<div class="post">
     <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
-    <p class="meta">{{ page.date | date: "%d %B %Y" }}, Amsterdam</p>
+    <span class="meta">{{ page.date | date: "%d %B %Y" }}, Amsterdam</span>
     <div class="entry">
-    {{ content }}
-</div>
+        {{ content }}
+    </div>
     {% if page.comments %}
     <div id="disqus_thread">
     <script type="text/javascript">var disqus_shortname='sergimansilla';(function(){var dsq=document.createElement('script');dsq.type='text/javascript';dsq.async=true;dsq.src='http://'+disqus_shortname+'.disqus.com/embed.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>

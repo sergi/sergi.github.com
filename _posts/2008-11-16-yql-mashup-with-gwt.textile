@@ -33,7 +33,7 @@ which returns a response in the format that you specify (either XML or JSON) tha
 As you can see it is a very intuitive way to interact with web services (if only they were not all from Yahoo) for everybody that knows a bit of SQL.
 
 If you want to try other queries or see examples of its use with other services you can use the "YQL Console":http://developer.yahoo.com/yql/console/.
-
+<!--more-->
 h2. Querying YQL with Google Web Toolkit
 
 !http://www.sergimansilla.com/blog/wp-content/uploads/2008/11/screenshot-2-182x300.png!
@@ -70,7 +70,7 @@ public void executeQuery(String keyword)
     // Makes the request using OAuth, which calls our just created callback
     // and adds the response as a scrito the page
     this.addScript(OAuth.makeSignedRequest(
-        flyqlr.Y_KEY, flyqlr.Y_SECRET, flyqlr.YQL_URL 
+        flyqlr.Y_KEY, flyqlr.Y_SECRET, flyqlr.YQL_URL
             + "q=" + query + "&amp;format=json" + "&amp;callback=" + callback));
 }
 

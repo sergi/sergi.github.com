@@ -9,7 +9,7 @@ I first read about the "Solitaire algorithm":http://www.schneier.com/solitaire.h
 Solitaire is a "stream cipher(Stream Cipher)":http://en.wikipedia.org/wiki/Stream_cipher created by "Bruce Schneier":http://www.schneier.com and designed to be used with only a deck of cards. No electronic devices are needed and its security is intended to be of military-strength; that means that even if the way to generate/decipher messages is manual and might look a bit rudimentary, ideally not even the most powerful government could ever decipher a message generated with Solitaire (although some potential flaws have been "reported":http://www.ciphergoth.org/crypto/solitaire).
 
 So after playing with "F#":http://research.microsoft.com/fsharp/fsharp.aspx lately, I decided to write some non-trivial code in order to see how it suits my coding style and habits, and yet another naive implementation of this curious crypto-algorithm was born.
-
+<!--more-->
 h3. Notes about the implementation
 
 After the initial struggle learning the particularities of F# (which are basically the same as ocaml) I quickly felt comfortable with it. It's a very versatile language, given that it allows the programmer to use functional and imperative programming at his own will, so the learning curve is not very steep. And although the functional approach should be used most of the time, sometimes imperative code is more convenient and can make some programmers with a C or Java background feel more in control. For an example, consider this snippet of code:
