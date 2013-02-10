@@ -1,5 +1,3 @@
-/* Global Reset */
-
 * {
   margin: 0;
   padding: 0;
@@ -18,10 +16,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
 }
 
-h1 {
-  /*margin-bottom: 1em;*/
-}
-
 p {
   margin: 1em 0;
 }
@@ -36,11 +30,6 @@ a:visited {
 
 li {
     list-style-type: none;
-}
-
-table {
-  font-size: inherit;
-  font: 100%;
 }
 
 /** Top bar CSS */
@@ -140,9 +129,9 @@ ul.posts {
     float: right;
 }
 */
-.post.index > h1 {
-    font: 26px "gentium book basic", Georgia;
-    margin-top: 1.5em;
+
+.post.index {
+    margin-bottom: 1.5em;
 }
 
 .post > h1 {
@@ -150,14 +139,12 @@ ul.posts {
 }
 
 .post > h1 a {
-    margin-top: 20px;
     color: #000;
     text-decoration: none;
 }
 
 .post > h1 a:hover {
     color: #006;
-    text-decoration: none;
 }
 
 .post > h2 {

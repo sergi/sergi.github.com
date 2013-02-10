@@ -2,6 +2,7 @@
 layout: post
 title: The promise of Firefox OS
 keywords: firefox,mozilla,ffos,firefox os,mobile,webapi,open
+comments: true
 ---
 
 "But *how* is it going to beat Android or iOS?”
