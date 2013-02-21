@@ -62,14 +62,6 @@ li {
     clear: both;
 }
 
-.topbar div > ul, .nav {
-    display: block;
-    float: left;
-    margin: 8px 20px 0 0;
-    position: relative;
-    left: 0;
-}
-
 /*************/
 
 li {
@@ -253,4 +245,10 @@ font-size: 110%;
     margin-right: auto;
     display: block;
 }
-
+hr {
+    border: 0;
+    margin: 25px 0;
+    height: 1px;
+    background: black;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, black));
+}
