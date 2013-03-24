@@ -1,4 +1,4 @@
-def jekyll(opts = "", path = "/usr/bin/")
+def jekyll(opts = "", path = "")
   sh "rm -rf _site"
   sh path + "jekyll " + opts
 end

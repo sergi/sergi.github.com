@@ -2,11 +2,13 @@
 layout: default
 ---
 <div class="post">
-    <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+    <h1><a href="{{ page.url }}" itemprop="name">{{ page.title }}</a></h1>
     <span class="meta">{{ page.date | date: "%d %B %Y" }}, Amsterdam</span>
-    <div class="entry">
+    <div class="entry" itemprop="articleBody">
         {{ content }}
         <hr>
+        <div class="kindleWidget" style="display:inline-block;padding:3px;cursor:pointer;font-size:11px;font-family:Tahoma;white-space:nowrap;line-height:1;border-radius:3px;border:#ccc thin solid;color:black;background:transparent url('https://d1xnn692s7u6t6.cloudfront.net/button-gradient.png') repeat-x;background-size:contain;"><img style="vertical-align:middle;margin:0;padding:0;border:none;" src="https://d1xnn692s7u6t6.cloudfront.net/white-15.png" /><span style="vertical-align:middle;margin-left:3px;">Send to Kindle</span></div>
+        <g:plusone></g:plusone>
         <p>If you'd like, you could follow me on <a href="{{site.author.twitter}}" title="Twitter">twitter</a>, <a href="https://plus.google.com/108447529408245632723/posts" title="Google+">Google+</a> or drop me an <a href="mailto:{{site.author.email}}" title="email">Email</a>.
     </div>
     {% if page.comments %}
