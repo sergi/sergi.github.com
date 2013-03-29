@@ -3,16 +3,18 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="Sergi Mansilla" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html',''}}" />
     {% if page.title %}
         <title>{{ page.title }}</title>
         <meta property="og:type" content="article" />
+        <meta property="og:article:author" content="Sergi Mansilla" />
         <meta property="og:title" content="{{ page.title }}" />
     {% else %}
         <title>{{ site.title }}</title>
         <meta property="og:type" content="blog" />
     {% endif %}
     {% if site.title %}
-      <meta property="og:site_name" content="{{ site.title }}" />
+        <meta property="og:site_name" content="{{ site.title }}" />
     {% endif %}
     {% if page.date %}
         <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
@@ -69,16 +71,6 @@
 </div>
 <script type="text/javascript" src="https://d1xnn692s7u6t6.cloudfront.net/widget.js"></script>
 <script type="text/javascript">(function k(){window.$SendToKindle&&window.$SendToKindle.Widget?$SendToKindle.Widget.init({}):setTimeout(k,500);})();</script>
-<script type="text/javascript">
-  window.___gcfg = {
-    lang: 'en-US'
-  };
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </body>
 </html>
 
