@@ -7,8 +7,16 @@
         <meta name="author" content="{{ site.author.name }}" />
         <meta name="description" content="{{ site.description }}" />
         <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="{{ site.feed }}" />
-        <link rel="stylesheet" href="css/screen.css" type="text/css" />
-        <link rel="stylesheet" href="css/syntax.css" type="text/css" />
+        <link rel="stylesheet" href="/css/tomorrow-night.css">
+        <script src="/js/highlight.pack.js"></script>
+        <script>
+            window.onload = function () {
+                var all_pre = document.getElementsByTagName("pre");
+                for (var i = 0; i < all_pre.length; i++) {
+                    hljs.highlightBlock(all_pre[i]);
+                }
+            }
+        </script>
         <link rel='index' title='{{ site.author }}' href='{{ site.url }}' />
         <meta name="description" content="Sergi Mansilla. Experiments about programming, functional programming and monkey brains programming." />
         <meta name="keywords" content="programming,development,functional,algorithms,cryptography,f#,javascript,gwt,java" />

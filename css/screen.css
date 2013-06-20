@@ -158,8 +158,6 @@ ul.posts {
 
   .post pre {
     border: 1px solid #ddd;
-    background-color: #000;
-    padding: 1em 1em;
     line-height: 1;
   }
 
@@ -251,4 +249,8 @@ hr {
     height: 1px;
     background: black;
     background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, black));
+}
+
+#home .header-img {
+    display: none;
 }

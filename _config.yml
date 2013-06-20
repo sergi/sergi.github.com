@@ -1,5 +1,5 @@
 markdown: rdiscount
-pygments: true
+pygments: false
 permalink: /blog/:title/
 paginate: 5
 
