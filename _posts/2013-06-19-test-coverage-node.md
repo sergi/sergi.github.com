@@ -36,7 +36,7 @@ Now we declare the remaining dependencies in the `package.json` of your project:
 <br/>
 ## Step 2: Set up a Makefile
 
-With everything installed, we just need to automate the process of generating the coverage report. I am using a `Makefile` to do that, but it could also be a simple script. After all, it is just executing bash commands.
+With everything installed, we just need to automate the process of generating the coverage report. I am using a `Makefile` to do that, but it could be a simple script. After all, it is just executing bash commands.
 
 We first create a file named `Makefile` in the root of our project folder and declare some variables containing the location of executables and a filter for test files:
 
@@ -64,9 +64,9 @@ After that, we make a case for generating a coverage report:
     mv lib-orig lib
     genhtml reports/lcov.info --output-directory reports/</code></pre>
 
-In the code above I scan the `lib` folder for JavaScript files and generate a `lib-cov` folder with the same files but this time instrumented by Istanbul. Anything outside of `lib` won't be taken into account for the code coverage report. I rename the original `lib` folder to `lib-orig` and we rename `lib-cov` to `lib` so the tests will use it as if it was the original one. After the reports are generated we restore `lib` to its original name and we get rid of other folders generated in the process.
+In the preceding code Istanbul instruments our source code in the `lib` folder, so anything outside of `lib` won't be taken into account by the code coverage report. The original folder is not modified, just renamed while the coverage report is generated. After that, `lib` is restored to its original name and I get rid of other folders generated in the process.
 
-Of course, you should change `lib` into the folder your source code is located.
+You should change `lib` to the location of your source code.
 
 As a nice final touch, we can add two extra actions to our Makefile, `clean` and `test`:
 
@@ -80,6 +80,6 @@ With this, we now have available a `coverage` action in the Makefile. So we can 
 
     make coverage
 
-and Istanbul will generate a report in the `report` folder. You can now go there and open `index.html` to see a very nice report of your coverage, by lines, functions and files.
+and Istanbul will generate a complete report in the `report` folder. You can now go there and open `index.html` to see your coverage by lines, functions and files.
 
-Happy coding!
+Happy testing!
