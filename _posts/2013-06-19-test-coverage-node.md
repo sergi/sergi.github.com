@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Add test coverage to your Node.js projects
+title: Add code coverage to your Node.js projects
 keywords: node,nodejs,test,coverage,npm,node,javascript,testing
 comments: true
 ---
 <img class="header-img" src="../../images/istanbul.jpg" title="Istanbul" style="width: 100%;" />
 
-Test coverage is invaluable to get an overview of how well-tested your app is, and it helps finding new bugs in your code. Unfortunately coverage reports are not ubiquitous in Node.js projects, and because of that it may seem that it is hard to set up, which is not the case at all!
+Code coverage is invaluable to get an overview of how well-tested your app is, and it helps finding new bugs in your code. Unfortunately coverage reports are not ubiquitous in Node.js projects, and because of that it may seem that it is hard to set up, which is not the case at all!
 
 I'm going to show you how to set up code coverage using [Mocha](http://visionmedia.github.io/mocha/), [Istanbul](https://github.com/gotwarlost/istanbul) and [LCOV](http://ltp.sourceforge.net/coverage/lcov.php) in two easy steps.
 <!--more-->
