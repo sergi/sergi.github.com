@@ -6,6 +6,10 @@ comments: true
 ---
 <img class="header-img" src="../../images/istanbul.jpg" title="Istanbul" style="width: 100%;" />
 
+**Note: This blog post is heavily based on [Xavier Seignard's blog post](http://xseignard.github.io/2013/04/25/quality-analysis-on-node.js-projects-with-mocha-istanbul-and-sonar/), and he gives
+a longer introduction on it, and configures it together with Sonar. You should
+check it out.**
+
 Code coverage is invaluable to get an overview of how well-tested your app is, and it helps finding new bugs in your code. Unfortunately coverage reports are not ubiquitous in Node.js projects, and because of that it may seem that it is hard to set up, which is not the case at all!
 
 I'm going to show you how to set up code coverage using [Mocha](http://visionmedia.github.io/mocha/), [Istanbul](https://github.com/gotwarlost/istanbul) and [LCOV](http://ltp.sourceforge.net/coverage/lcov.php) in two easy steps.
