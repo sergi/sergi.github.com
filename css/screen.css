@@ -28,10 +28,6 @@ a:visited {
   color: #EE4F09;
 }
 
-li {
-    list-style-type: none;
-}
-
 /** Top bar CSS */
 .topbar {
     background-color: #000;
@@ -63,11 +59,6 @@ li {
 }
 
 /*************/
-
-li {
-    line-height: 18px;
-    color: gray;
-}
 
 #siteTitle {
     width: 700px;

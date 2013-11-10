@@ -2,37 +2,64 @@
 layout: default
 ---
 <div class="post">
-    <h1><a href="{{ page.url }}" itemprop="name">{{ page.title }}</a></h1>
-    <span class="meta">{{ page.date | date: "%d %B %Y" }}, Amsterdam</span>
-    <div class="kindleWidget" style="float:right;display:inline-block;padding:3px;cursor:pointer;font-size:11px;font-family:Tahoma;white-space:nowrap;line-height:1;border-radius:3px;border:#ccc thin solid;color:black;background:transparent url('https://d1xnn692s7u6t6.cloudfront.net/button-gradient.png') repeat-x;background-size:contain;"><img style="vertical-align:middle;margin:0;padding:0;border:none;" src="https://d1xnn692s7u6t6.cloudfront.net/white-15.png" /><span style="vertical-align:middle;margin-left:3px;">Send to Kindle</span></div>
-    <div class="entry" itemprop="articleBody">
-        {{ content }}
-        <hr>
-        <p>If you'd like, you could follow me on <a href="{{site.author.twitter}}" title="Twitter">twitter</a>, <a href="https://plus.google.com/108447529408245632723/posts" title="Google+">Google+</a> or drop me an <a href="mailto:{{site.author.email}}" title="email">Email</a>.
-    </div>
-    {% if page.comments %}
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'sergimansilla'; // required: replace example with your forum shortname
+  <h1><a href="{{ page.url }}" itemprop="name">{{ page.title }}</a></h1>
+  <span class="meta">{{ page.date | date: "%d %B %Y" }}, Amsterdam</span>
 
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    {% endif %}
+  <div class="kindleWidget"
+       style="float:right;display:inline-block;padding:3px;cursor:pointer;font-size:11px;font-family:Tahoma;white-space:nowrap;line-height:1;border-radius:3px;border:#ccc thin solid;color:black;background:transparent url('https://d1xnn692s7u6t6.cloudfront.net/button-gradient.png') repeat-x;background-size:contain;">
+    <img style="vertical-align:middle;margin:0;padding:0;border:none;"
+         src="https://d1xnn692s7u6t6.cloudfront.net/white-15.png"/><span style="vertical-align:middle;margin-left:3px;">Send to Kindle</span>
+  </div>
+  <div class="entry" itemprop="articleBody">
+    {{ content }}
+    <div style="padding: 3px; padding-top: 1px; padding-left: 5px;display:inline-block">
+      <script id='flattrbtn'>(function(i) {
+        var f, s = document.getElementById(i);
+        f = document.createElement('iframe');
+        f.src = '//api.flattr.com/button/view/?uid=sergimansilla&button=compact&url=' + encodeURIComponent(document.URL);
+        f.title = 'Flattr';
+        f.height = 20;
+        f.width = 110;
+        f.style.borderWidth = 0;
+        s.parentNode.insertBefore(f, s);
+      })('flattrbtn');</script>
+    </div>
+    <hr>
+    <p>If you'd like, you could follow me on <a href="{{site.author.twitter}}"
+                                                title="Twitter">twitter</a>, <a
+        href="https://plus.google.com/108447529408245632723/posts"
+        title="Google+">Google+</a> or drop me an
+      <a href="mailto:{{site.author.email}}" title="email">Email</a>.
+  </div>
+  {% if page.comments %}
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'sergimansilla'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by
+    <span class="logo-disqus">Disqus</span></a>
+  {% endif %}
 </div>
 
 <div id="related">
   <h2>Related Posts</h2>
   <ul class="posts">
     {% for post in site.related_posts limit:3 %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    <li><span>{{ post.date | date_to_string }}</span> &raquo;
+      <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
 </div>
