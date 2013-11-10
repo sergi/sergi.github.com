@@ -72,7 +72,6 @@ I came up with the following macro:
       }
     }
 
-
 This allows us to keep the current syntax for function definitions, but also
 add a case that accepts our new `where` syntax. The generated JavaScript for the `square`
 function above looks then like this:
@@ -99,14 +98,14 @@ function.
 * It will only accept expressions in the form `function(param) is expression`,
 so it is limited in expressivity (I believe that Pyret does the same, though)
 
-I will keep playing with sweet.js to improve the macro though, as it could become
+I will keep playing with sweet.js to make the macro more robust, as it could become
 pretty helpful when it is more complete.
 
 Anyhow, please keep in mind that this is not code you should use in production
 right away! But I hope it shows the power of macros in JavaScript. And this was
 even a very simple one.
 
-##Uses
+## Using macros
 
 I believe macros and sweet.js shouldn't be in libraries intended to be
 used by third parties without careful consideration, but that being said, they are definitely
@@ -114,13 +113,13 @@ a powerful weapon for using in internal code. A good example is
 to use them in unit tests suites, internal DSLs, build tooling or other
 utilities.
 
-I will also leave the debate of whether people using macros to extend
-JavaScript is a good idea overall :) It is fun for sure, though!
+I will also not enter the debate of whether people using macros to extend
+JavaScript is a good idea :) It is fun for sure, though!
 
 Kudos to Mozilla and [Tim Disney](https://github.com/disnet) for coming up
 with such a cool project.
 
-P.S. Upon checking on Tim's Github projects I found out that he is actively
+P.S. Upon checking on Tim's Github projects I found out that he is actually
 working on a contract library for JavaScript,
 [contracts.js](https://github.com/disnet/contracts.js). Check it out!
 
