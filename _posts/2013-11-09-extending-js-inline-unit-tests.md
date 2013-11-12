@@ -48,26 +48,28 @@ After wrestling a little bit with the syntax and some misleading error messages
 I came up with the following macro:
 
     let function = macro {
-      case {_ $name ($params ...) { $body ...} where {
+      rule {
+        $name ($params ...) { $body ...} where {
           $($wname($wparams ...) is $val)
           ...
-         }
-      } => {
-        return #{
-          function $name ($params ...) {
-            $body ...
-          }
-          (function(){
-            (assert($($wname ($wparams ...)), $val)) (;) ...
-          })()
         }
+      } => {
+        function $name ($params ...) {
+          $body ...
+        }
+        (function(){
+          function assert(condition, message) {
+            if (!condition) {
+              throw message || "Assertion failed";
+            }
+          }
+          (assert($($wname ($wparams ...)) === $val)) (;) ...
+        })()
       }
 
-      case {_ $name ($params ...) { $body ...} } => {
-        return #{
-          function $name ($params ...) {
-            $body ...
-          }
+      rule {_ $name ($params ...) { $body ...} } => {
+        function $name ($params ...) {
+          $body ...
         }
       }
     }
@@ -76,12 +78,17 @@ This allows us to keep the current syntax for function definitions, but also
 add a case that accepts our new `where` syntax. The generated JavaScript for the `square`
 function above looks then like this:
 
-    function square(n$36966) {
-      return n$36966 * n$36966;
+    function square(n$5588) {
+      return n$5588 * n$5588;
     }
     (function () {
-      assert(square(2), 4);
-      assert(square(3), 5);
+      function assert(condition$5589, message$5590) {
+        if (!condition$5589) {
+          throw message$5590 || 'Assertion failed';
+        }
+      }
+      assert(square(2) === 4);
+      assert(square(3) === 5);
     }());
 
 And so we have some rudimentary unit testing for functions in JavaScript! Time
@@ -92,8 +99,6 @@ to eat a reward cookie.
 This macro was made in less than 20 minutes, so consider it as a very
 quick-and-dirty solution, and it has a few caveats:
 
-* The resulting code still depends of the user defining an `assert`
-function.
 * It doesn't give the nice errors that Pyret gives.
 * It will only accept expressions in the form `function(param) is expression`,
 so it is limited in expressivity (I believe that Pyret does the same, though)
@@ -123,4 +128,8 @@ P.S. Upon checking on Tim's Github projects I found out that he is actually
 working on a contract library for JavaScript,
 [contracts.js](https://github.com/disnet/contracts.js). Check it out!
 
-
+**Update:** Tim suggested to use `rule` instead of `case`, since our
+scenario doesn't need the complexity that `case` offers. He also suggested to
+provide the `assert` function inside the
+<abbr title="Immediately-Invoked Function Expression">IIFE</abbr>. I updated
+the code with these suggestions.
