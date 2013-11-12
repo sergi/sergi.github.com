@@ -8,7 +8,7 @@ permalink: /index.html
         <div class="post index">
             <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
             <span class="meta">{{ post.date | date_to_string }}</span>
-            {{ post.content | summarize }}
+            {{ post.excerpt }}
             <p>
                 <a href="{{ post.url }}">READ MORE</a>
             </p>

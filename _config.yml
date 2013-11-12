@@ -2,6 +2,7 @@ markdown: rdiscount
 pygments: false
 permalink: /blog/:title/
 paginate: 5
+excerpt_separator: <!--more-->
 
 exclude:
     - README.textile
