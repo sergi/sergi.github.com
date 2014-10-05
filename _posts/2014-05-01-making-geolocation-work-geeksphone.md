@@ -4,6 +4,7 @@ title: Making geolocation work on Geeksphone devices
 keywords: geolocation,firefox,fxos,ffos,geeksphone,revolution,firefox os
 published: true
 comments: true
+excerpt: For a long time, an easy way to get access to a Firefox OS phone was to order a *Peak* or *Keon* model from Geeksphone. The phone maker jumped on the Firefox OS train early on, offering reasonably priced phones aimed to early adopters.
 ---
 
 *This post is written for my own reference, in order to document the steps for getting geolocation working on Geeksphone phones.*
@@ -46,21 +47,21 @@ Change (or add) the properties `geo.gps.supl_server` and `geo.gps.supl_port` in 
     pref('b2g.wifi.allow_unsafe_wpa_eap', true);
     pref('network.dns.localDomains', "gaiamobile.org,calendar.gaiamobile.org,fl.gaiamobile.org,camera.gaiamobile.org,communications.gaiamobile.org,gallery.gaiamobile.org,keyboard.gaiamobile.org,video.gaiamobile.org,homescreen.gaiamobile.org,wallpaper.gaiamobile.org,music.gaiamobile.org,bluetooth.gaiamobile.org,ringtones.gaiamobile.org,sms.gaiamobile.org,wappush.gaiamobile.org,email.gaiamobile.org,setringtone.gaiamobile.org,browser.gaiamobile.org,system.gaiamobile.org,clock.gaiamobile.org,settings.gaiamobile.org,pdfjs.gaiamobile.org,costcontrol.gaiamobile.org,marketplace.firefox.com.gaiamobile.org");
     pref("app.update.url", "http://gpfos.s3.amazonaws.com/revolution/update.xml");
-    
+
     pref("geo.gps.supl_server", "supl.google.com");
     pref("geo.gps.supl_port", 7276);
-    
+
     pref("dom.payment.provider.0.name", "firefoxmarket");
     pref("dom.payment.provider.0.description", "marketplace.firefox.com");
     pref("dom.payment.provider.0.uri", "https://marketplace.firefox.com/mozpay/?req=");
     pref("dom.payment.provider.0.type", "mozilla/payments/pay/v1");
     pref("dom.payment.provider.0.requestMethod", "GET");
-    
+
 **gps.conf**
 
 Replace the contents in *gps.conf* with the following ones. I got to this particular configuration after looking into different sources, and adapted it to my needs (the NTP server is the Dutch one, for example). I wrote comments to clarify some settings.
 
-    # Change Country and Region! see http://www.pool.ntp.org/en/ 
+    # Change Country and Region! see http://www.pool.ntp.org/en/
     NTP_SERVER=nl.pool.ntp.org
     NTP_SERVER=0.nl.pool.ntp.org
     NTP_SERVER=1.nl.pool.ntp.org
@@ -71,40 +72,40 @@ Replace the contents in *gps.conf* with the following ones. I got to this partic
     NTP_SERVER=1.europe.pool.ntp.org
     NTP_SERVER=2.europe.pool.ntp.org
     NTP_SERVER=3.europe.pool.ntp.org
-    
+
     AGPS=http://xtra1.gpsonextra.net/xtra.bin
     XTRA_SERVER_1=http://xtra1.gpsonextra.net/xtra.bin
     XTRA_SERVER_2=http://xtra2.gpsonextra.net/xtra.bin
     XTRA_SERVER_3=http://xtra3.gpsonextra.net/xtra.bin
-    
+
     DEFAULT_AGPS_ENABLE=TRUE
     DEFAULT_USER_PLANE=TRUE
     DEFAULT_SSL_ENABLE=FALSE
-    
+
     REPORT_POSITION_USE_SUPL_REFLOC=1
-    
+
     QOS_ACCURACY=50
     QOS_TIME_OUT_STANDALONE=80
     QOS_TIME_OUT_AGPS=95
     QosHorizontalThreshold=1000
     QosVerticalThreshold=500
-    
+
     AssistMethodType=1
     AgpsUse=1
     AgpsMtConf=0
     AgpsMtResponseType=1
     AgpsServerType=1
     AgpsServerIp=3232235555
-    
+
     # Intermediate position report, 1=enable, 0=disable
     INTERMEDIATE_POS=1
     # Accuracy threshold for intermediate positions
     # less accurate positions are ignored, 0 for passing all positions
     ACCURACY_THRES=3000
-    
+
     C2K_HOST=c2k.pde.com
     C2K_PORT=1234
-    
+
     ### AGPS server settings for Google ###
     SUPL_HOST=supl.google.com
     SUPL_PORT=7276
@@ -112,22 +113,22 @@ Replace the contents in *gps.conf* with the following ones. I got to this partic
     SUPL_NO_SECURE_PORT=3425
     SUPL_TLS_HOST=FQDN
     SUPL_TLS_CERT=/etc/SuplRootCert
-    
+
     # Carrier tags used universally in GPS configs
     CURRENT_CARRIER=common
-    
+
     # Indoor Positioning Settings
     # 0: QUIPC disabled, 1: QUIPC enabled, 2: forced QUIPC only
     QUIPC_ENABLED=1
-    
+
     #Use WiFi 1=”On”, 0=”Off”
     ENABLE_WIPER=1
-        
+
 Now, since Google uses a GeoTrust certificate (you can check doing `openssl s_client -connect supl.google.com:7275` in the terminal), we need to retrieve it and generate the root certificate we will use in our phone:
 
     $ wget https://www.geotrust.com/resources/root_certificates/certificates/GeoTrust_Global_CA.pem
     $ openssl x509 -inform PEM -in GeoTrust_Global_CA.pem -outform DER -out SuplRootCert
-    
+
 Finally we need to upload all the files we modified into the device and reboot it:
 
     $ adb remount
@@ -135,7 +136,7 @@ Finally we need to upload all the files we modified into the device and reboot i
     $ adb push gps.conf /etc/gps.conf
     $ adb push SuplRootCert /etc/SuplRootCert
     $ adb reboot
-    
+
 After doing this my geolocation worked, even indoors. It still takes some seconds to retrieve the AGPS fix and sometimes doesn't get it immediately, but I can say that it works well enough to not drive me mad.
 
 Good luck!
