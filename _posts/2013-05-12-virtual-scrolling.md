@@ -2,6 +2,7 @@
 layout: post
 title: Virtual list in vanilla JavaScript
 keywords: html,javascript,performance,dom,list,rows,mobile,browser
+excerpt: Let's say you need to show a scrolling list with millions of rows, or even a reasonably big list with visually complex rows, each one composed by several DOM elements or CSS3 effects.  If you try to render this the naive way, for example by appending rows into a DOM container with the CSS overflow property set to scroll (or auto), you will most likely run into performance issues.
 comments: true
 ---
 
@@ -14,7 +15,6 @@ for example by appending rows into a DOM container with the CSS  `overflow` prop
 to `scroll` (or `auto`), you will most likely run into performance issues. This is because all the items in the list are cached, thus your memory
 consumption will certainly go up, and since all the DOM nodes composing the rows of
 the list are appended in the document, the browser is trying to properly render them all making your CPU pretty busy as you scroll. If these rows change any style say, on hover, you will trigger a [reflow](http://www-archive.mozilla.org/newlayout/doc/reflow.html) and the experience will be even more sluggish.
-<!--more-->
 
 Many websites and apps have run into this issue before and solved it using _virtual renderers_, which trick the viewer into thinking that she is looking at a massive list, when in reality only the items that are currently in the viewport are being loaded and rendered. A popular application that does that is the [ACE editor](http://ace.ajax.org/), which can load a massively big source code file while keeping scrolling snappy using this technique.
 

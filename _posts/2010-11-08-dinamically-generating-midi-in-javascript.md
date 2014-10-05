@@ -2,52 +2,68 @@
 layout: post
 title: Dynamically generating MIDI in JavaScript
 keywords: midi, programming, javascript, js, music, generation, html5, audio, browser
-excerpt: Dynamically generating and playing midi using JavaScript
 ---
 
-Last weekend I open-sourced a [small side project](https://github.com/sergi/jsmidi) consisting of a JavaScript library that generates MIDI in a simple manner. As an example, the code to generate a MIDI file that plays 3 notes (C, E and G) would look like the following:
+Last weekend I open-sourced a [small side project](https://github.com/sergi/jsmidi) consisting of a JavaScript library that generates MIDI in a simple manner.
 
-    // We pass some notes to |MidiWriter.createNote| to create the MIDI
-    // events that define the notes that will be in the final MIDI stream. If
-    // no other parameters are specified to |createNote|, a NoteOff event
-    // will be inserted automatically, instead of letting the note ring forever.
-
-    // Disregard the |push.apply|, it is used here simply to flatten the
-    // resulting array, since |createNote| returns an array of events.
-
-    var noteEvents = [];
-    ["C4", "E4", "G4"].forEach(function(note) {
-        Array.prototype.push.apply(noteEvents, MidiEvent.createNote(note));
-    });
-
-    // Create a track that contains the events to play the notes above
-    var track = new MidiTrack({ events: noteEvents });
-
-    // Creates an object that contains the final MIDI track in base64 and some
-    // useful methods.
-    var song  = MidiWriter({ tracks: [track] });
-
-    // Alert the base64 representation of the MIDI file
-    alert(song.b64);
-
-    // Play the song
-    song.play();
-
-    // Play/save the song (depending of MIDI plugins in the browser). It opens
-    // a new window and loads the generated MIDI file with the proper MIME type
-    song.save();
-
-The library is work in progress, but it already outputs standard MIDI files ([SMF":http://www.midi.org/aboutmidi/tut_midifiles.php) encoded in "base64](http://en.wikipedia.org/wiki/Base64), and can play them in any browser that has a plugin that can reproduce MIDI installed. It is usually Quicktime in most machines. And now, please allow me to rant a little bit...
 <!--more-->
+
+As an example, the code to generate a MIDI file that plays 3 notes (C, E and G) would look like the following:
+
+{% highlight js %}
+
+// We pass some notes to |MidiWriter.createNote| to create the MIDI
+// events that define the notes that will be in the final MIDI stream. If
+// no other parameters are specified to |createNote|, a NoteOff event
+// will be inserted automatically, instead of letting the note ring forever.
+
+// Disregard the |push.apply|, it is used here simply to flatten the
+// resulting array, since |createNote| returns an array of events.
+
+var noteEvents = [];
+["C4", "E4", "G4"].forEach(function(note) {
+    Array.prototype.push.apply(noteEvents, MidiEvent.createNote(note));
+});
+
+// Create a track that contains the events to play the notes above
+var track = new MidiTrack({ events: noteEvents });
+
+// Creates an object that contains the final MIDI track in base64 and some
+// useful methods.
+var song  = MidiWriter({ tracks: [track] });
+
+// Alert the base64 representation of the MIDI file
+alert(song.b64);
+
+// Play the song
+song.play();
+
+// Play/save the song (depending of MIDI plugins in the browser). It opens
+// a new window and loads the generated MIDI file with the proper MIME type
+song.save();
+
+{% endhighlight %}
+
+The library is work in progress, but it already outputs standard MIDI files
+([SMF](http://www.midi.org/aboutmidi/tut_midifiles.php) encoded in
+[base64](http://en.wikipedia.org/wiki/Base64)), and can play them in any
+browser that has a plugin that can reproduce MIDI installed. It is usually
+Quicktime in most machines.
+
+And now, please allow me to rant a little bit...
+
 ## The surprisingly bad state of MIDI in the browser
 
-While developing this small library I was shocked at how inconsistent the state of MIDI reproducibility is in the browser. I might have been very naive, but I expected that a MIDI file would just sound right away inside a browser. Boy was I wrong.
+While developing this small library I was shocked at how inconsistent the state
+of MIDI reproducibility is in the browser. I might have been very naive, but I
+expected that a MIDI file would just sound right away inside a browser. Boy was
+I wrong.
 
 *Disclaimer: Any time I talk about reproducing MIDI, I am trying to do so using a data URI encoded in base64. Although all the browsers mentioned should be compatible with it, there are some bugs related to how data URI is supported when using it along with external plugins.*
 
-The new and shiny HTML5 <code><audio></code> element doesn’t support MIDI in any browser, so I had to revert to the good ol’ <code><embed></code> element, which supports it ONLY if the user has a proper plugin installed. All the browsers are using the Quicktime 7 plugin (I was very surprised to see that the mighty [VLC](http://www.videolan.org) can’t reproduce MIDI out of the box).
+The new and shiny HTML5 `<audio>` element doesn’t support MIDI in any browser, so I had to revert to the good ol’ `<embed>` element, which supports it ONLY if the user has a proper plugin installed. All the browsers are using the Quicktime 7 plugin (I was very surprised to see that the mighty [VLC](http://www.videolan.org) can’t reproduce MIDI out of the box).
 
-In some cases, even with the plugin installed, things didn’t work. That is the case for Webkit in Mac, which can’t reproduce the MIDI file generated by the library, while Webkit on Windows and Firefox 4b6 (Mac/Win) have no problems with it. I suspect this is due to bad interaction of the plugins with data URIs.
+In some cases, even with the plugin installed, things didn’t work. That is the case for Webkit in Mac, which can’t reproduce the MIDI file generated by the library, while Webkit on Windows and Firefox 4b6 have no problems with it. I suspect this is due to bad interaction of the plugins with data URIs.
 
 Of course you can always try to force a file download, but that’s not the point. It would be very nice if something as basic as cross-browser MIDI reproducibility would exist, and it is surprising that it is not possible.
 

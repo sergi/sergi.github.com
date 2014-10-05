@@ -1,30 +1,56 @@
-markdown: rdiscount
-pygments: false
-permalink: /blog/:title/
-paginate: 5
+# Build settings
+markdown: redcarpet
+highlighter: pygments
+
+# Site settings
+title: "Sergi Mansilla"
+description: > # this means to ignore newlines until "email:"
+   See how high your monkey jumps
+
+email: sergi.mansilla@gmail.com
+#blog logo
+logo: "/assets/images/icon_73598.png"
+# blog cover
+cover: "/assets/images/sergi_speaks.jpg"
+permalink: "/blog/:title"
+feed: "/blog/atom.xml"
+
+name: 'Sergi Mansilla'
+author: 'Sergi Mansilla'
+author_image: "/assets/images/author.jpg"
+
 excerpt_separator: <!--more-->
+paginate: 5
 
-exclude:
-    - README.textile
-    - Rakefile
-    - .htaccess
+url: "http://sergimansilla.com" # the base hostname & protocol for your site
+baseurl: ""
 
-title:          Sergi Mansilla
-url:            http://sergimansilla.com
-url_blog:       http://sergimansilla.com/blog
-feed:           /blog/atom.xml
-baseline:       "See how high your monkey jumps."
-description:    "Sergi Mansilla. Experiments about functional programming and monkey brains programming."
-keywords:       "programming,development,functional,algorithms,cryptography,f#,javascript,javascript"
+# social icons and sharing options
+social:
+  - icon:	twitter
+    url:	https://twitter.com/sergimansilla
+    desc: Follow me on twitter
+    share_url: http://twitter.com/share
+    share_title: ?text=
+    share_link: "&amp;url="
 
-css:
-    - /css/screen.css
-    - /css/syntax.css
+#  - icon:	facebook
+#    url:	https://facebook.com/???
+#    desc: Connect with me facebook
+#    share_url: //www.facebook.com/sharer.php
+#    share_title: ?t=
+#    share_link: "&amp;u="
 
-author:
-    name: Sergi Mansilla
-    email: sergi.mansilla+blog@gmail.com
-    twitter: http://twitter.com/sergimansilla
-    github: http://github.com/sergi
-    gplus: https://plus.google.com/108447529408245632723
-    linkedin: http://nl.linkedin.com/in/smansilla
+  - icon:	github
+    url:	https://github.com/sergi
+    desc:	Fork me on github
+    share_url:
+    share_title:
+    share_link:
+
+  - icon:	google-plus
+    url:	https://plus.google.com/108447529408245632723
+    desc:	Add me on Google+
+    share_url:
+    share_title:
+    share_link:

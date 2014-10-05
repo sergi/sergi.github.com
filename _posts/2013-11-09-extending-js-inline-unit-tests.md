@@ -4,13 +4,15 @@ title: Extending JavaScript with inline unit tests
 keywords: sweetjs,racket,contract,pyret,javascript,testing
 comments: true
 ---
-<img class="header-img" src="../../images/candy_apples_min.jpg" title="Candied Apples" style="width: 100%;" />
-
 I’ve been checking out [Pyret](http://www.pyret.org), the new language from the same guys that made
 [Racket](http://racket-lang.org/). Even if
 it is designed to be for education, it has a syntax I love and some really
 cool features, like the possibility of adding in-line unit tests to your
-functions. This feature in particular looks like this:
+functions.
+
+<!--more-->
+
+This feature in particular looks like this:
 
     fun square(n):
       n * n
@@ -30,16 +32,16 @@ latest developments that sweet.js has made
 [since last year](https://speakerdeck.com/sergi/extending-javascript-the-easy-way)
 (among other improvements, we can now rewrite reserved keywords in our macros!).
 
-<!--more-->
-
 The objective is to be able to write something like this in JavaScript:
 
-    function square(n) {
-        return n * n;
-    } where {
-        square(2) is 4
-        square(3) is 5
-    }
+{% highlight js %}
+function square(n) {
+  return n * n;
+} where {
+  square(2) is 4
+  square(3) is 5
+}
+{% endhighlight %}
 
 This code should execute the assertions as soon as we load the JavaScript file,
 and throw exceptions (or warn us somehow) in case the tests don't pass.
@@ -75,21 +77,23 @@ I came up with the following macro:
     }
 
 This allows us to keep the current syntax for function definitions, but also
-add a case that accepts our new `where` syntax. The generated JavaScript for the `square`
-function above looks then like this:
+add a case that accepts our new `where` syntax. The generated JavaScript for
+the `square` function above looks then like this:
 
-    function square(n$5588) {
-      return n$5588 * n$5588;
+{% highlight js %}
+function square(n$5588) {
+  return n$5588 * n$5588;
+}
+(function () {
+  function assert(condition$5589, message$5590) {
+    if (!condition$5589) {
+      throw message$5590 || 'Assertion failed';
     }
-    (function () {
-      function assert(condition$5589, message$5590) {
-        if (!condition$5589) {
-          throw message$5590 || 'Assertion failed';
-        }
-      }
-      assert(square(2) === 4);
-      assert(square(3) === 5);
-    }());
+  }
+  assert(square(2) === 4);
+  assert(square(3) === 5);
+}());
+{% endhighlight %}
 
 And so we have some rudimentary unit testing for functions in JavaScript! Time
 to eat a reward cookie.

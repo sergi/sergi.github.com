@@ -16,8 +16,10 @@ iPhone, and a developer has simply no way to access an internal component like
 the phone keyboard.
 <!--more-->
 
-Well, it only took a small part of an afternoon to implement a proof of concept of cursor-swiping in Firefox OS. And even if this swipe-selection implementation is only a prototype, it’s perfectly functional
-and I've already gotten used to its convenience. See a rough video I made here:
+Well, it only took a small part of an afternoon to implement a proof of concept
+of cursor-swiping in Firefox OS. And even if this swipe-selection
+implementation is only a prototype, it’s perfectly functional and I've already
+gotten used to its convenience. See a rough video I made here:
 
 <p style="text-align: center">
 <iframe style="text-align: center" width="560" height="315" src="http://www.youtube.com/embed/uDzb7HZY2mE?rel=0" frameborder="0" allowfullscreen></iframe>
