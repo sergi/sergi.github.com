@@ -33,3 +33,7 @@ Anyway, I am sure there are many other ways in which this whole thing could have
 I am now left unprotected from trackers, I can't use my passwords directly in the browser and I have to watch out manually for insecure connections. Unfortunately, I have no option but to install a previous version of Firefox or to (much easier) just switch to Chrome.
 
 At least until all the extension developers I care about manage to sign their extensions.
+
+### Update
+
+[Dale Harvey](https://twitter.com/daleharvey) tells me that setting the preference `xpinstall.signatures.required` to `false` disables the check. Good to know! Although I don't think it's a real solution for users that are not tech-savvy.
