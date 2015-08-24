@@ -10,7 +10,7 @@
 
 $rs: 16px
 
-$font-serif: Linux Libertine
+$font-serif: Georgia,Cambria,"Times New Roman",Times,serif
 $font-sans: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif
 
 
@@ -29,6 +29,7 @@ body
   margin: 0
   padding: 0
   text-rendering: optimizeLegibility
+  -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
   -moz-font-feature-settings: "liga=1, dlig=1"
   -ms-font-feature-settings: "liga", "dlig"
@@ -73,7 +74,7 @@ body
 
 .blog-header
   width: 100%
-  max-width: 640px
+  max-width: 700px
   margin: 0 auto
   position: relative
   padding: 0
@@ -127,7 +128,7 @@ body
 
 .content
   width: 100%
-  max-width: 640px
+  max-width: 700px
   margin: 0 auto
   @include box-sizing(border-box)
   @include respond-to(800)
@@ -218,7 +219,7 @@ body
   margin: 0 auto
   padding: $rs*3 0
   width: 100%
-  max-width: 640px
+  max-width: 700px
   font-size: $rs/4*3
   text-align: center
   color: #999
@@ -365,10 +366,11 @@ body
       font-weight: 400
       font-style: normal
       font-size: 22px
-      line-height: 30px
+      line-height: 1.5
       margin: 0
       padding-bottom: 30px
       color: #333
+      letter-spacing: 0.01rem
       -webkit-hyphens: auto
       -moz-hyphens: auto
       hyphens: auto
@@ -531,7 +533,7 @@ body
     width: 100%
     position: relative
     z-index: 99
-    max-width: 640px
+    max-width: 700px
     padding: 120px 0 90px
     text-align: center
     margin: 0 auto
