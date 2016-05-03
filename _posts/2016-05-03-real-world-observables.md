@@ -4,13 +4,13 @@ title: Real World Observables
 keywords: rxjs,reactive,javascript,ftp,sockets,repl
 published: true
 ---
-# Real world Observables
 
 Reactive code examples can be mind-blowing. Powerful, succint, robust...they seem to handle many concurrency scenarios without breaking a sweat. But let's be honest, examples from 30-minute conference talks and short blog posts rarely reflect the messy real world™.
 
-Developers get all pumped up about reactive goodness and want to use it in their projects. Alas, they quickly find out that it's not all reactive unicorns and rainbows, and that thinking of state in traditional programs as a sequence 	of events is not trivial.
+In any case, developers get all pumped up about reactive goodness and want to use it in their projects. Alas, they quickly find out that it's not all reactive unicorns and rainbows, and that thinking of state in traditional programs as a sequence 	of events is not trivial.
 
 I will attempt to shed some light on how to do that by writing a real world example in a few lines of RxJS: An FTP client.
+
 <!--more-->
 
 ## An FTP client??
@@ -65,16 +65,16 @@ For stuff like retrieving directory listings, the server needs to return multili
 
 For example, the following six lines contain two responses:
 
-     150-This is the first line of a mark
-     123-This line does not end the mark; note the hyphen
-     150 This line ends the mark
-     226-This is the first line of the second response
-      226 This line does not end the response; note the leading space
-     226 This is the last line of the response, using code 226
+    150-This is the first line of a mark
+    123-This line does not end the mark; note the hyphen
+    150 This line ends the mark
+    226-This is the first line of the second response
+    226 This line does not end the response; note the leading space
+    226 This is the last line of the response, using code 226
 
 To parse responses, we create a helper function `parseFtpResponses`:
 
-```
+```javascript
 const RE_RES = /^(\d\d\d)\s.*/;
 const RE_MULTI = /^(\d\d\d)-/;
 
@@ -117,7 +117,7 @@ import { fromStream, writeToStream } from 'rx-node';
 
 Let's now create the `Ftp` class:
 
-```
+```javascript
 class Ftp {
   constructor(host = 'localhost', port = 21) {
     this._ftpSocket = Net.createConnection(port, host);
@@ -133,15 +133,15 @@ class Ftp {
 Of course, `_ftpSocket` will spew raw data in utf8. It's our task to make sense of it. But because `responses` is an Observable, it's easy to transform its data. We'll start by making the Observable emit only whole lines of text, delimited by `CRLF` characters, as specified by the [FTP RFC](https://www.ietf.org/rfc/rfc959.txt):
 
 ```javascript
-    this.responses = fromStream(this._ftpSocket)
-      .flatMap(res => {
-        // Splits both \n and \r\n cases
-        let lines = res.split('\n').map(line => line.trim());
-        return Rx.Observable.from(lines);
-      })
-      .scan(parseFtpResponses, { command: '', accumulated: '' })
-      .filter(value => value.command.length > 0)
-      .map(value => value.command);
+this.responses = fromStream(this._ftpSocket)
+  .flatMap(res => {
+    // Splits both \n and \r\n cases
+    let lines = res.split('\n').map(line => line.trim());
+    return Rx.Observable.from(lines);
+  })
+  .scan(parseFtpResponses, { command: '', accumulated: '' })
+  .filter(value => value.command.length > 0)
+  .map(value => value.command);
 ```
 
 The `flatMap` operator replaces data emitted in `fromStream` with whole lines of text, separated by newline characters. We then apply `parseResponses` to the sequence of lines, to obtain whole FTP responses, and finally we discard empty responses with `filter` and extract the `response` value with `map`.
@@ -158,7 +158,7 @@ this.requests = new Rx.Subject();
 
 And we create the only method in the `Ftp` class, the `command` method, which will push commands to the `requests` Subject:
 
-```
+```javascript
 command(cmd) {
   cmd = cmd.trim() + '\r\n';
   this.requests.onNext(cmd);

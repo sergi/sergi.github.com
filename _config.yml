@@ -54,3 +54,6 @@ social:
     share_url:
     share_title:
     share_link:
+sass:
+      sass_dir: _sass
+gems: [jekyll-paginate]
