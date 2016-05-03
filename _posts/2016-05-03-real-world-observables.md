@@ -11,6 +11,7 @@ Reactive code examples can be mind-blowing. Powerful, succint, robust...they see
 Developers get all pumped up about reactive goodness and want to use it in their projects. Alas, they quickly find out that it's not all reactive unicorns and rainbows, and that thinking of state in traditional programs as a sequence 	of events is not trivial.
 
 I will attempt to shed some light on how to do that by writing a real world example in a few lines of RxJS: An FTP client.
+<!--more-->
 
 ## An FTP client??
 
