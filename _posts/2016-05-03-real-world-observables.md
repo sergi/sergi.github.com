@@ -269,5 +269,5 @@ If you want to know more about the possibilities of Reactive Programming, I wrot
         seamless>Loading…</iframe>
 </div>
 
-Find the complete code for this article [here](https://github.com/sergi/simple_ftp).
+Find the complete code for this article [here](https://github.com/sergi/simple_ftp). Discussion of this article in [Hacker News](https://news.ycombinator.com/item?id=11624078).
 
